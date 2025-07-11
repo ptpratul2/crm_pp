@@ -242,3 +242,19 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["module", "=", "CRM PP"]  # Your app's module name
+        ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["module", "=", "CRM PP"]
+        ]
+    },
+    "Client Script",
+    "Server Script"
+]
