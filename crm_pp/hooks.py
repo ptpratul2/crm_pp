@@ -243,16 +243,28 @@ app_license = "mit"
 # }
 
 fixtures = [
+    # {
+    #     "dt": "Custom Field",
+    #     "filters": [
+    #         ["module", "=", "CRM PP"]  # Your app's module name
+    #     ]
+    # },
+    # {
+    #     "dt": "Property Setter",
+    #     "filters": [
+    #         ["module", "=", "CRM PP"]
+    #     ]
+    # },
     {
         "dt": "Custom Field",
         "filters": [
-            ["module", "=", "CRM PP"]  # Your app's module name
+            ["dt", "in", ["Lead", "Opportunity"]]
         ]
     },
     {
         "dt": "Property Setter",
         "filters": [
-            ["module", "=", "CRM PP"]
+            ["doc_type", "in", ["Lead", "Opportunity"]]
         ]
     },
     "Client Script",
