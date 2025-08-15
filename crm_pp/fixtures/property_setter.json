@@ -455,22 +455,6 @@
   "doctype_or_field": "DocField",
   "field_name": "status",
   "is_system_generated": 0,
-  "modified": "2025-08-09 18:51:09.497781",
-  "module": "CRM PP",
-  "name": "Opportunity-status-options",
-  "property": "options",
-  "property_type": "Select",
-  "row_name": null,
-  "value": "Introduction\nDiscussion\nProposal\nNegotiation\nAgreement\nClosed Won\nClosed Lost\nOpen\nQuotation\nConverted\nLost\nReplied\nClosed"
- },
- {
-  "default_value": null,
-  "doc_type": "Opportunity",
-  "docstatus": 0,
-  "doctype": "Property Setter",
-  "doctype_or_field": "DocField",
-  "field_name": "status",
-  "is_system_generated": 0,
   "modified": "2025-08-09 18:51:09.484692",
   "module": null,
   "name": "Opportunity-status-label",
@@ -1454,5 +1438,21 @@
   "property_type": "Data",
   "row_name": null,
   "value": "[\"contact_section\", \"first_name\", \"middle_name\", \"last_name\", \"full_name\", \"email_id\", \"user\", \"address\", \"sync_with_google_contacts\", \"custom_contact_owner\", \"custom_escalation_matrix\", \"custom_industry\", \"custom_verticals\", \"cb00\", \"status\", \"salutation\", \"designation\", \"gender\", \"phone\", \"mobile_no\", \"custom_mobile_2\", \"company_name\", \"image\", \"custom_account_name\", \"custom_email\", \"custom_report_to\", \"sb_00\", \"google_contacts\", \"google_contacts_id\", \"cb_00\", \"pulled_from_google_contacts\", \"sb_01\", \"email_ids\", \"phone_nos\", \"contact_details\", \"links\", \"is_primary_contact\", \"is_billing_contact\", \"more_info\", \"department\", \"unsubscribed\", \"custom_accountid\", \"custom_id\", \"custom_column_break_brn3c\", \"custom_description\"]"
+ },
+ {
+  "default_value": null,
+  "doc_type": "Opportunity",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "status",
+  "is_system_generated": 0,
+  "modified": "2025-08-15 21:22:40.767524",
+  "module": "CRM PP",
+  "name": "Opportunity-status-options",
+  "property": "options",
+  "property_type": "Select",
+  "row_name": null,
+  "value": "Introduction\nDiscussion\nProposal\nNegotiation\nAgreement\nClosed Won\nClosed Lost\nOpen\nQuotation\nConverted\nLost\nReplied\nClosed\nContact In Future"
  }
 ]
