@@ -28,6 +28,12 @@ app_license = "mit"
 # app_include_css = "/assets/crm_pp/css/crm_pp.css"
 # app_include_js = "/assets/crm_pp/js/crm_pp.js"
 
+
+app_include_js = [
+    "/assets/crm_pp/js/crm_note.js",
+    "/assets/crm_pp/css/timezone.css"
+]
+
 # include js, css files in header of web template
 # web_include_css = "/assets/crm_pp/css/crm_pp.css"
 # web_include_js = "/assets/crm_pp/js/crm_pp.js"
@@ -44,6 +50,10 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Lead": "public/js/lead_custom.js"
+}
+
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -156,6 +166,15 @@ app_license = "mit"
 # }
 
 
+doc_events = {
+    "ToDo": {
+        "after_insert": "crm_pp.custom_lead.update_lead_assign_date"
+    },
+     "Lead": {
+        "on_update": "crm_pp.crm_pp.lead_email.send_lead_owner_notification"
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -188,6 +207,13 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "crm_pp.event.get_events"
 # }
+
+override_whitelisted_methods = {
+    "erpnext.crm.utils.add_note": "crm_pp.crm_pp.crm_note_override.add_note",
+    "erpnext.crm.utils.edit_note": "crm_pp.crm_pp.crm_note_override.edit_note",
+    "erpnext.crm.utils.delete_note": "crm_pp.crm_pp.crm_note_override.delete_note",
+}
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

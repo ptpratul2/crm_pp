@@ -1,0 +1,32 @@
+/* hide timezone text nodes commonly used by Frappe datetime controls */
+.small.timezone,
+.text-muted.timezone,
+.control-value .timezone,
+.input-with-tz .timezone {
+    display: none !important;
+}
+
+.help-box {
+display: none;
+}
+
+.form-group[data-fieldname="custom_created_on"].help-box {
+display: none;
+    }
+
+.form-stats-likes {
+    display: none !important;
+}
+.form-stats-comments {
+    display: none !important;
+}
+.form-stats-views {
+    display: none !important;
+}
+.form-stats-shares {
+    display: none !important;
+}
+.form-sidebar .form-stats-likes,
+.form-sidebar a.comments {
+    display: none !important;
+}
