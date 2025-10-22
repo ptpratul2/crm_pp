@@ -311,6 +311,24 @@ fixtures = [
             ["doc_type", "in", ["Lead", "Opportunity", "Customer", "Contact"]]
         ]
     },
+    {
+        "dt": "Dashboard",
+        "filters": [
+            ["module", "=", "CRM PP"]
+        ]
+    },
+    {
+        "dt": "Dashboard Chart",
+        "filters": [
+            ["module", "=", "CRM PP"]
+        ]
+    },
+    {
+        "dt": "Number Card",
+        "filters": [
+            ["module", "=", "CRM PP"]
+        ]
+    },
     "Client Script",
     "Server Script"
 ]

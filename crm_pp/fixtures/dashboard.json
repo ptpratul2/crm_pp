@@ -1,0 +1,103 @@
+[
+ {
+  "cards": [
+   {
+    "card": "Total Opportunity Value",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Won Opportunity Value",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Total Sales Value",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Payment Received",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Outstanding Invoices",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   }
+  ],
+  "chart_options": null,
+  "charts": [
+   {
+    "chart": "Leads by State",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Opportunities by Vertical",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Top Customers by Opportunity Value",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Leads by Source",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Opportunities by Status",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Full"
+   },
+   {
+    "chart": "Payment Collection Trend",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Outstanding by Customer",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
+    "chart": "Customer Revenue Distribution",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Full"
+   }
+  ],
+  "dashboard_name": "CRM Dashboard",
+  "docstatus": 0,
+  "doctype": "Dashboard",
+  "is_default": 0,
+  "is_standard": 0,
+  "modified": "2025-10-22 22:52:57.899982",
+  "module": "CRM PP",
+  "name": "CRM Dashboard"
+ }
+]
