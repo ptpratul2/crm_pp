@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-02 15:10:41.613605",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_name",
+  "service_code",
+  "revenue_amount",
+  "line_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "options": "Price Book Entry"
+  },
+  {
+   "fetch_from": "service_name.services_code",
+   "fieldname": "service_code",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Service Code"
+  },
+  {
+   "fetch_from": "service_name.revenue_amount",
+   "fieldname": "revenue_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Revenue Amount"
+  },
+  {
+   "fieldname": "line_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Line Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-14 18:56:01.425362",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Revenue History",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
