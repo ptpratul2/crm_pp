@@ -3,6 +3,24 @@ from frappe.utils import flt
 
 
 @frappe.whitelist()
+def get_total_leads():
+	"""Get total count of leads"""
+	return frappe.db.count("Lead")
+
+
+@frappe.whitelist()
+def get_total_opportunities():
+	"""Get total count of opportunities"""
+	return frappe.db.count("Opportunity")
+
+
+@frappe.whitelist()
+def get_won_opportunities():
+	"""Get count of won opportunities"""
+	return frappe.db.count("Opportunity", {"status": "Converted"})
+
+
+@frappe.whitelist()
 def get_conversion_rate():
 	"""Calculate Lead to Opportunity conversion rate"""
 	total_leads = frappe.db.count("Lead")

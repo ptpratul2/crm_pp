@@ -2,7 +2,25 @@
  {
   "cards": [
    {
+    "card": "Total Leads",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Total Opportunities",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
     "card": "Total Opportunity Value",
+    "parent": "CRM Dashboard",
+    "parentfield": "cards",
+    "parenttype": "Dashboard"
+   },
+   {
+    "card": "Won Opportunities",
     "parent": "CRM Dashboard",
     "parentfield": "cards",
     "parenttype": "Dashboard"
@@ -42,6 +60,13 @@
     "width": "Half"
    },
    {
+    "chart": "Leads by Vertical",
+    "parent": "CRM Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Half"
+   },
+   {
     "chart": "Opportunities by Vertical",
     "parent": "CRM Dashboard",
     "parentfield": "charts",
@@ -67,7 +92,7 @@
     "parent": "CRM Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
-    "width": "Full"
+    "width": "Half"
    },
    {
     "chart": "Payment Collection Trend",
@@ -96,7 +121,7 @@
   "doctype": "Dashboard",
   "is_default": 0,
   "is_standard": 0,
-  "modified": "2025-10-22 22:52:57.899982",
+  "modified": "2025-10-22 22:56:44.486506",
   "module": "CRM PP",
   "name": "CRM Dashboard"
  }
