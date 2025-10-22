@@ -30,24 +30,6 @@
     "parent": "CRM Dashboard",
     "parentfield": "cards",
     "parenttype": "Dashboard"
-   },
-   {
-    "card": "Total Sales Value",
-    "parent": "CRM Dashboard",
-    "parentfield": "cards",
-    "parenttype": "Dashboard"
-   },
-   {
-    "card": "Payment Received",
-    "parent": "CRM Dashboard",
-    "parentfield": "cards",
-    "parenttype": "Dashboard"
-   },
-   {
-    "card": "Outstanding Invoices",
-    "parent": "CRM Dashboard",
-    "parentfield": "cards",
-    "parenttype": "Dashboard"
    }
   ],
   "chart_options": null,
@@ -74,7 +56,7 @@
     "width": "Half"
    },
    {
-    "chart": "Top Customers by Opportunity Value",
+    "chart": "Top Customers by Opportunities",
     "parent": "CRM Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
@@ -92,7 +74,7 @@
     "parent": "CRM Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
-    "width": "Full"
+    "width": "Half"
    },
    {
     "chart": "Customer Revenue Distribution",
@@ -107,7 +89,7 @@
   "doctype": "Dashboard",
   "is_default": 0,
   "is_standard": 0,
-  "modified": "2025-10-22 23:01:38.807851",
+  "modified": "2025-10-22 23:15:04.452068",
   "module": "CRM PP",
   "name": "CRM Dashboard"
  }
