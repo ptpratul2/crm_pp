@@ -92,21 +92,7 @@
     "parent": "CRM Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
-    "width": "Half"
-   },
-   {
-    "chart": "Payment Collection Trend",
-    "parent": "CRM Dashboard",
-    "parentfield": "charts",
-    "parenttype": "Dashboard",
-    "width": "Half"
-   },
-   {
-    "chart": "Outstanding by Customer",
-    "parent": "CRM Dashboard",
-    "parentfield": "charts",
-    "parenttype": "Dashboard",
-    "width": "Half"
+    "width": "Full"
    },
    {
     "chart": "Customer Revenue Distribution",
@@ -121,7 +107,7 @@
   "doctype": "Dashboard",
   "is_default": 0,
   "is_standard": 0,
-  "modified": "2025-10-22 22:56:44.486506",
+  "modified": "2025-10-22 23:01:38.807851",
   "module": "CRM PP",
   "name": "CRM Dashboard"
  }
