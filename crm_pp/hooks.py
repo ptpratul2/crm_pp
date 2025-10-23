@@ -329,6 +329,5 @@ fixtures = [
             ["module", "=", "CRM PP"]
         ]
     },
-    "Client Script",
     "Server Script"
 ]
