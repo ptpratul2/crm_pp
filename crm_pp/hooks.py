@@ -328,6 +328,5 @@ fixtures = [
         "filters": [
             ["module", "=", "CRM PP"]
         ]
-    },
-    "Server Script"
+    }
 ]
