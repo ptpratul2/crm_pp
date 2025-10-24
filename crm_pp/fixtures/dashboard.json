@@ -140,7 +140,7 @@
     "width": "Half"
    },
    {
-    "chart": null,
+    "chart": "Opportunities by Status",
     "parent": "CRM Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
@@ -159,7 +159,7 @@
   "doctype": "Dashboard",
   "is_default": 0,
   "is_standard": 0,
-  "modified": "2025-10-24 08:57:12.533393",
+  "modified": "2025-10-24 09:51:34.091906",
   "module": "CRM PP",
   "name": "CRM Dashboard"
  }
