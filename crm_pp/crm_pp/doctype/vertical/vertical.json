@@ -6,20 +6,43 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "vertical_name"
+  "vertical_name",
+  "company",
+  "connection"
  ],
  "fields": [
   {
    "fieldname": "vertical_name",
    "fieldtype": "Data",
-   "label": "Vertical Name",
+   "label": "Vertical",
    "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "connection",
+   "fieldtype": "Tab Break",
+   "label": "Connection",
+   "show_dashboard": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-07-15 21:26:21.249839",
+ "links": [
+  {
+   "link_doctype": "Lead",
+   "link_fieldname": "custom_vertical"
+  },
+  {
+   "link_doctype": "Opportunity",
+   "link_fieldname": "custom_vertical"
+  }
+ ],
+ "modified": "2025-10-26 19:44:48.069496",
  "modified_by": "Administrator",
  "module": "CRM PP",
  "name": "Vertical",
