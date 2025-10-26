@@ -33,6 +33,7 @@ app_include_css = "/assets/crm_pp/css/timezone.css"
 
 app_include_js = [
      "assets/crm_pp/js/custom_communication.js",
+     "assets/crm_pp/js/email_template_auto_attach.js",
 ]
 
 # include js, css files in header of web template
@@ -54,7 +55,13 @@ app_include_js = [
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 
 doctype_js = {
-    "Lead": "public/js/lead_custom.js"
+    "Lead": [
+        "public/js/lead_custom.js",
+        "public/js/city_state_mapping_autocomplete.js"
+    ],
+    "Opportunity": [
+        "public/js/city_state_mapping_autocomplete.js"
+    ]
 }
 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
