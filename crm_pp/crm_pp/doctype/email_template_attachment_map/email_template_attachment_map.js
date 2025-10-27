@@ -126,3 +126,4 @@ frappe.ui.form.on('Email Template Attachment Map', {
 	}
 });
 
+

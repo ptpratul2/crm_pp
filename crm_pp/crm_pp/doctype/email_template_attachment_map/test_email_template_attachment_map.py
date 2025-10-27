@@ -19,3 +19,4 @@ class TestEmailTemplateAttachmentMap(unittest.TestCase):
 		# Add more comprehensive tests as needed
 		pass
 
+

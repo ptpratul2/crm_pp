@@ -115,3 +115,4 @@ def get_template_attachment_count(template_name):
 	
 	return count
 
+

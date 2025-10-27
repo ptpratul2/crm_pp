@@ -210,6 +210,15 @@ doc_events = {
 # 	],
 # }
 
+# Auto-link emails from all Email Accounts every 10 minutes
+scheduler_events = {
+    "cron": {
+        "*/10 * * * *": [
+            "crm_pp.overrides.multi_account_auto_link.auto_link_all_emails"
+        ]
+    }
+}
+
 # Testing
 # -------
 
@@ -227,6 +236,9 @@ doc_events = {
 #     "erpnext.crm.utils.edit_note": "crm_pp.crm_pp.crm_note_override.edit_note",
 #     "erpnext.crm.utils.delete_note": "crm_pp.crm_pp.crm_note_override.delete_note",
 # }
+override_whitelisted_methods = {
+    "frappe.email.receive.EmailAccount.populate_inbox": "crm_pp.overrides.email_fetch.custom_populate_inbox"
+}
 
 #
 # each overriding function accepts a `data` argument;

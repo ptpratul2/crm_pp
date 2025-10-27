@@ -1,0 +1,99 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                   AUTO EMAIL LINKING - QUICK REFERENCE                         ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📁 FILES CREATED
+─────────────────────────────────────────────────────────────────────────────────
+  • crm_pp/overrides/multi_account_auto_link.py    Main module
+  • crm_pp/overrides/__init__.py                   Module initializer
+  • crm_pp/hooks.py                                 Updated (scheduler config)
+  • crm_pp/test_auto_link.py                       Test script
+  • crm_pp/AUTO_EMAIL_LINKING.md                   Full documentation
+  • crm_pp/verify_auto_link_setup.sh               Setup verification script
+
+⚙️  SETUP (One-time)
+─────────────────────────────────────────────────────────────────────────────────
+  1. Verify installation:
+     cd /home/frappe-user/frappe-bench
+     ./apps/crm_pp/verify_auto_link_setup.sh
+
+  2. Restart bench:
+     bench restart
+
+  3. Enable scheduler (if needed):
+     bench --site [your-site] enable-scheduler
+
+🧪 TESTING
+─────────────────────────────────────────────────────────────────────────────────
+  • Manual test (recommended):
+    bench --site [your-site] execute crm_pp.test_auto_link.test_auto_link
+
+  • Check scheduler status:
+    bench --site [your-site] scheduler status
+
+  • View recent communications:
+    bench --site [your-site] execute crm_pp.test_auto_link.show_recent_communications
+
+📊 MONITORING
+─────────────────────────────────────────────────────────────────────────────────
+  • View logs (real-time):
+    tail -f /home/frappe-user/frappe-bench/sites/[your-site]/private/logs/auto_link_log.txt
+
+  • View all logs:
+    cat /home/frappe-user/frappe-bench/sites/[your-site]/private/logs/auto_link_log.txt
+
+  • Check Frappe error logs:
+    bench --site [your-site] error-log
+
+  • Scheduler logs:
+    tail -f sites/[your-site]/logs/scheduler.log
+
+🔧 CONFIGURATION
+─────────────────────────────────────────────────────────────────────────────────
+  • Runs every:        10 minutes (via cron: */10 * * * *)
+  • Lookback period:   15 minutes
+  • Links to:          Lead, Opportunity, Customer
+  • Log location:      /sites/{sitename}/private/logs/auto_link_log.txt
+
+📝 HOW IT WORKS
+─────────────────────────────────────────────────────────────────────────────────
+  1. Every 10 minutes, finds Communications with no links (last 15 min)
+  2. Extracts emails from sender, recipients, CC
+  3. Searches for matching email_id in Lead, Opportunity, Customer
+  4. Creates Communication Link entries
+  5. Logs all actions to auto_link_log.txt
+
+✅ FEATURES
+─────────────────────────────────────────────────────────────────────────────────
+  ✓ Works with all Email Accounts simultaneously
+  ✓ Independent of "Enable Automatic Linking" setting
+  ✓ Prevents duplicate links
+  ✓ Comprehensive logging
+  ✓ Automatic scheduling
+  ✓ Error recovery
+
+🔍 TROUBLESHOOTING
+─────────────────────────────────────────────────────────────────────────────────
+  Problem: Links not being created
+  → Run: bench --site [your-site] execute crm_pp.test_auto_link.test_auto_link
+  → Check log file for details
+  → Verify matching documents exist (Lead/Opportunity/Customer with same email_id)
+
+  Problem: Scheduler not running
+  → Check: bench --site [your-site] scheduler status
+  → Enable: bench --site [your-site] enable-scheduler
+  → Restart: bench restart
+
+  Problem: Import errors
+  → Verify __init__.py exists in overrides/
+  → Restart bench: bench restart
+
+📚 DOCUMENTATION
+─────────────────────────────────────────────────────────────────────────────────
+  Full documentation: apps/crm_pp/AUTO_EMAIL_LINKING.md
+
+═════════════════════════════════════════════════════════════════════════════════
+Replace [your-site] with your actual site name in all commands
+═════════════════════════════════════════════════════════════════════════════════
+
+

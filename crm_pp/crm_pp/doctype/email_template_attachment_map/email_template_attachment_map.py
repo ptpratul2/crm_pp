@@ -28,3 +28,4 @@ class EmailTemplateAttachmentMap(Document):
 		if not self.attachment_file:
 			frappe.throw("Attachment File is required")
 
+
