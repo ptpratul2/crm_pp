@@ -57,7 +57,12 @@ app_include_js = [
 doctype_js = {
     "Lead": [
         "public/js/lead_custom.js",
-        "public/js/city_state_mapping_autocomplete.js"
+        "public/js/city_state_mapping_autocomplete.js",
+        "public/js/perm_qualification.js",
+        "public/js/llc_qualification.js",
+        "public/js/temp_qualification.js",
+        "public/js/franchise_qualification.js",
+        "public/js/ld_qualification.js"
     ],
     "Opportunity": [
         "public/js/city_state_mapping_autocomplete.js"
@@ -179,13 +184,18 @@ doctype_js = {
 # }
 
 
+# Python hooks for lead_vertical_handler ENABLED
 doc_events = {
     "ToDo": {
         "after_insert": "crm_pp.custom_lead.update_lead_assign_date"
     },
      "Lead": {
-        "on_update": "crm_pp.crm_pp.lead_email.send_lead_owner_notification",
-        "validate": "crm_pp.crm_pp.create_customer_from_lead.create_customer_from_lead"
+        "on_update": [
+            "crm_pp.crm_pp.lead_email.send_lead_owner_notification"
+        ],
+        "validate": [
+            "crm_pp.crm_pp.create_customer_from_lead.create_customer_from_lead"
+        ]
     }
 }
 
