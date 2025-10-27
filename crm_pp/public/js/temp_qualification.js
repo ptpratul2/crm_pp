@@ -147,31 +147,25 @@ frappe.ui.form.on('Lead', {
             }
 
             // ============================================
-            // LEAD QUALIFIED - AUTO CONVERT
+            // LEAD QUALIFIED - ALLOW STATUS CHANGE
             // ============================================
-            if (current_status === "Qualified" && score >= 50) {
-                frm.set_value("status", "Converted");
-                
-                frappe.msgprint({
-                    title: __("🎉 Lead Successfully Converted!"),
-                    message: __(`
-                        <div style="text-align: center; padding: 15px;">
-                            <p style="font-size: 16px; margin-bottom: 10px;">
-                                <strong>Congratulations!</strong>
-                            </p>
-                            <div style="padding: 20px; background: #d4edda; border-left: 4px solid #28a745; margin: 15px 0;">
-                                <div style="font-size: 20px; font-weight: bold; color: #155724;">
-                                    Final Score: ${score} / 70
-                                </div>
+            // Lead meets all criteria, allow the status change
+            frappe.msgprint({
+                title: __("✓ Lead Qualified"),
+                message: __(`
+                    <div style="text-align: center; padding: 15px;">
+                        <div style="padding: 20px; background: #d4edda; border-left: 4px solid #28a745; margin: 15px 0;">
+                            <div style="font-size: 20px; font-weight: bold; color: #155724;">
+                                Score: ${score} / 70
                             </div>
-                            <p style="color: #155724; font-weight: 500;">
-                                Lead has met all qualification criteria
-                            </p>
                         </div>
-                    `),
-                    indicator: "green"
-                });
-            }
+                        <p style="color: #155724; font-weight: 500;">
+                            Lead has met all qualification criteria
+                        </p>
+                    </div>
+                `),
+                indicator: "green"
+            });
         }
 
         // Store current status for next validation
@@ -285,14 +279,14 @@ function calculate_temp_qualification_score(frm) {
                 volume_score = 0;
         }
         score += volume_score;
-        frm.set_value("custom_multilocation_presence", volume_score > 0 ? 1 : 0);
+        frm.set_value("custom_minimum_staffing_requirement", 1); // Set checkbox if any value is selected
         if (volume_score > 0) {
             breakdown.push(`✓ Recruitment Volume (${frm.doc.custom_recruitment_volume}): ${volume_score} pts`);
         } else {
             breakdown.push("✗ Recruitment Volume: 0 pts");
         }
     } else {
-        frm.set_value("custom_multilocation_presence", 0);
+        frm.set_value("custom_minimum_staffing_requirement", 0);
         breakdown.push("✗ Recruitment Volume: Not provided");
     }
 
@@ -310,7 +304,7 @@ function calculate_temp_qualification_score(frm) {
                 turnover_score = 0;
         }
         score += turnover_score;
-        frm.set_value("custom_turnover_temp", turnover_score > 0 ? 1 : 0);
+        frm.set_value("custom_turnover_temp", 1); // Set checkbox if any value is selected
         if (turnover_score > 0) {
             breakdown.push(`✓ Turnover (${frm.doc.custom_turnover_in_inr}): ${turnover_score} pts`);
         } else {
@@ -404,10 +398,7 @@ function display_temp_realtime_score(frm, score, breakdown) {
     
     // Also show in dashboard if vertical is Temporary Staffing
     if (frm.doc.custom_vertical === "Temporary Staffing") {
-        // Remove existing dashboard if any
-        frm.dashboard.clear_headline();
-        
-        // Add score to dashboard
+        // Add score alert without clearing existing dashboard
         frm.dashboard.set_headline_alert(
             `<div style="font-size: 14px;">
                 <strong>Temp Staffing Qualification Score:</strong> 

@@ -146,31 +146,25 @@ frappe.ui.form.on('Lead', {
             }
 
             // ============================================
-            // LEAD QUALIFIED - AUTO CONVERT
+            // LEAD QUALIFIED - ALLOW STATUS CHANGE
             // ============================================
-            if (current_status === "Qualified" && score >= 12) {
-                frm.set_value("status", "Converted");
-                
-                frappe.msgprint({
-                    title: __("🎉 Lead Successfully Converted!"),
-                    message: __(`
-                        <div style="text-align: center; padding: 15px;">
-                            <p style="font-size: 16px; margin-bottom: 10px;">
-                                <strong>Congratulations!</strong>
-                            </p>
-                            <div style="padding: 20px; background: #d4edda; border-left: 4px solid #28a745; margin: 15px 0;">
-                                <div style="font-size: 20px; font-weight: bold; color: #155724;">
-                                    Final Score: ${score} / 100
-                                </div>
+            // Lead meets all criteria, allow the status change
+            frappe.msgprint({
+                title: __("✓ Lead Qualified"),
+                message: __(`
+                    <div style="text-align: center; padding: 15px;">
+                        <div style="padding: 20px; background: #d4edda; border-left: 4px solid #28a745; margin: 15px 0;">
+                            <div style="font-size: 20px; font-weight: bold; color: #155724;">
+                                Score: ${score} / 100
                             </div>
-                            <p style="color: #155724; font-weight: 500;">
-                                Lead has met all qualification criteria
-                            </p>
                         </div>
-                    `),
-                    indicator: "green"
-                });
-            }
+                        <p style="color: #155724; font-weight: 500;">
+                            Lead has met all qualification criteria
+                        </p>
+                    </div>
+                `),
+                indicator: "green"
+            });
         }
 
         // Store current status for next validation
@@ -414,13 +408,10 @@ function display_realtime_score(frm, score, breakdown) {
     
     // Also show in dashboard if vertical is Permanent Staffing
     if (frm.doc.custom_vertical === "Permanent Staffing") {
-        // Remove existing dashboard if any
-        frm.dashboard.clear_headline();
-        
-        // Add score to dashboard
+        // Add score alert without clearing existing dashboard
         frm.dashboard.set_headline_alert(
             `<div style="font-size: 14px;">
-                <strong>Qualification Score:</strong> 
+                <strong>Permanent Staffing Qualification Score:</strong> 
                 <span style="color: ${indicator_color}; font-weight: bold; font-size: 16px;">
                     ${score} / 100
                 </span>
