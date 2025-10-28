@@ -85,20 +85,24 @@ frappe.ui.form.on('Lead', {
             if (missing_fields.length > 0) {
                 frm.set_value("status", "Unqualified");
                 
-                frappe.msgprint({
-                    title: __("⚠️ Lead Unqualified"),
-                    message: __(`
-                        <div style="padding: 15px;">
-                            <p style="font-size: 15px; margin-bottom: 15px;">
-                                <strong>Missing Required Criteria:</strong>
-                            </p>
-                            <ul style="margin-left: 20px; color: #d73a49; font-size: 14px;">
-                                ${missing_fields.map(f => `<li>${f}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `),
-                    indicator: "red"
-                });
+                // Only show message once per validation attempt
+                if (!frm.doc.__validation_msg_shown) {
+                    frappe.msgprint({
+                        title: __("⚠️ Lead Unqualified"),
+                        message: __(`
+                            <div style="padding: 15px;">
+                                <p style="font-size: 15px; margin-bottom: 15px;">
+                                    <strong>Missing Required Criteria:</strong>
+                                </p>
+                                <ul style="margin-left: 20px; color: #d73a49; font-size: 14px;">
+                                    ${missing_fields.map(f => `<li>${f}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `),
+                        indicator: "red"
+                    });
+                    frm.doc.__validation_msg_shown = true;
+                }
                 
                 frappe.validated = false; // Prevent save
                 return;
@@ -108,50 +112,46 @@ frappe.ui.form.on('Lead', {
             if (score < 6) {
                 frm.set_value("status", "Unqualified");
                 
-                frappe.msgprint({
-                    title: __("⚠️ Lead Unqualified"),
-                    message: __(`
-                        <div style="padding: 15px; text-align: center;">
-                            <div style="padding: 20px; background: #fff3cd; border-left: 4px solid #ffc107; margin: 10px 0;">
-                                <div style="font-size: 18px; font-weight: bold; color: #856404;">
-                                    Score: ${score} / 44
-                                </div>
-                                <div style="font-size: 14px; color: #856404; margin-top: 5px;">
-                                    Minimum Required: 6
+                // Only show message once per validation attempt
+                if (!frm.doc.__validation_msg_shown) {
+                    frappe.msgprint({
+                        title: __("⚠️ Lead Unqualified"),
+                        message: __(`
+                            <div style="padding: 15px; text-align: center;">
+                                <div style="padding: 20px; background: #fff3cd; border-left: 4px solid #ffc107; margin: 10px 0;">
+                                    <div style="font-size: 18px; font-weight: bold; color: #856404;">
+                                        Score: ${score} / 44
+                                    </div>
+                                    <div style="font-size: 14px; color: #856404; margin-top: 5px;">
+                                        Minimum Required: 6
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    `),
-                    indicator: "red"
-                });
+                        `),
+                        indicator: "red"
+                    });
+                    frm.doc.__validation_msg_shown = true;
+                }
                 
                 frappe.validated = false; // Prevent save
                 return;
             }
 
             // ============================================
-            // LEAD QUALIFIED - ALLOW STATUS CHANGE
+            // LEAD QUALIFIED - SHOW SUBTLE ALERT
             // ============================================
-            // Lead meets all criteria, allow the status change
-            frappe.msgprint({
-                title: __("✓ Lead Qualified"),
-                message: __(`
-                    <div style="text-align: center; padding: 15px;">
-                        <div style="padding: 20px; background: #d4edda; border-left: 4px solid #28a745; margin: 15px 0;">
-                            <div style="font-size: 20px; font-weight: bold; color: #155724;">
-                                Score: ${score} / 44
-                            </div>
-                        </div>
-                        <p style="color: #155724; font-weight: 500;">
-                            Lead has met all qualification criteria
-                        </p>
-                    </div>
-                `),
-                indicator: "green"
-            });
+            // Lead meets all criteria - use subtle alert instead of popup
+            // Show only if status actually changed to Qualified/Converted
+            if (current_status !== previous_status) {
+                frappe.show_alert({
+                    message: __(`✓ Lead Qualified (Score: ${score}/44)`),
+                    indicator: 'green'
+                }, 5);
+            }
         }
 
-        // Store current status for next validation
+        // Reset validation message flag and store current status for next validation
+        frm.doc.__validation_msg_shown = false;
         frm.doc.__last_status = current_status;
     }
 });
@@ -277,72 +277,52 @@ function display_llc_realtime_score(frm, score, breakdown) {
     let icon = qualifies ? "✓" : "⚠";
     
     // Build score breakdown HTML
-    let breakdown_html = breakdown.map(item => `<div style="font-size: 12px; padding: 2px 0;">${item}</div>`).join('');
+    let breakdown_html = breakdown.map(item => `<div style="font-size: 11px; padding: 2px 0;">${item}</div>`).join('');
     
-    // Create or update the score display card
+    // Create or update the score display card - MINIMAL & COMPACT
     let score_html = `
-        <div style="
-            position: sticky;
-            top: 10px;
-            padding: 15px;
+        <div id="llc-qualification-banner" style="
+            padding: 10px 15px;
             background: ${indicator_bg};
-            border-left: 5px solid ${indicator_color};
-            border-radius: 5px;
-            margin: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 3px solid ${indicator_color};
+            border-radius: 4px;
+            margin: 8px 0;
+            font-size: 13px;
         ">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <h4 style="margin: 0; color: ${indicator_color}; font-size: 16px;">
-                    ${icon} LLC Qualification Score
-                </h4>
-                <span style="
-                    font-size: 24px;
-                    font-weight: bold;
-                    color: ${indicator_color};
-                ">${score} / 44</span>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: ${indicator_color}; font-weight: 600;">
+                    ${icon} LLC Qualification Score: <strong style="font-size: 16px;">${score} / 44</strong>
+                </span>
+                <span style="color: ${indicator_color}; font-weight: 600; font-size: 12px;">
+                    ${status_text}
+                </span>
             </div>
-            <div style="
-                background: white;
-                padding: 5px 10px;
-                border-radius: 3px;
-                text-align: center;
-                font-weight: bold;
-                color: ${indicator_color};
-                margin-bottom: 10px;
-            ">
-                ${status_text} (Minimum: 6)
-            </div>
-            <details style="margin-top: 10px; cursor: pointer;">
-                <summary style="font-weight: bold; color: #666; user-select: none;">
-                    📊 Score Breakdown
+            <details style="margin-top: 8px; cursor: pointer;">
+                <summary style="font-size: 11px; color: #666; user-select: none;">
+                    📊 View Breakdown
                 </summary>
-                <div style="margin-top: 10px; padding-left: 10px; border-left: 2px solid #ddd;">
+                <div style="margin-top: 6px; padding-left: 8px; border-left: 2px solid #ddd; font-size: 11px;">
                     ${breakdown_html || '<div style="color: #999;">No criteria met yet</div>'}
                 </div>
             </details>
         </div>
     `;
     
-    // Update the description of the score field with visual display
+    // Method 1: Update the description of the score field with visual display
     if (frm.fields_dict.custom_qualification_score) {
         frm.set_df_property('custom_qualification_score', 'description', score_html);
     }
     
-    // Also show in dashboard if vertical is Labour Law Advisory & Compliance
-    if (frm.doc.custom_vertical === "Labour Law Advisory & Compliance") {
-        // Add score alert without clearing existing dashboard
-        frm.dashboard.set_headline_alert(
-            `<div style="font-size: 14px;">
-                <strong>LLC Qualification Score:</strong> 
-                <span style="color: ${indicator_color}; font-weight: bold; font-size: 16px;">
-                    ${score} / 44
-                </span>
-                <span style="margin-left: 10px; color: ${indicator_color};">
-                    ${status_text}
-                </span>
-            </div>`,
-            qualifies ? 'green' : 'red'
-        );
+    // Method 2: Add prominent banner at the top of the form (below funnel)
+    // Remove any existing LLC banner first
+    if (frm.$wrapper) {
+        frm.$wrapper.find('#llc-qualification-banner').remove();
+        
+        // Insert the banner right after the form-dashboard (where the funnel is)
+        let $form_layout = frm.$wrapper.find('.form-layout');
+        if ($form_layout.length) {
+            $form_layout.prepend(score_html);
+        }
     }
 }
 
