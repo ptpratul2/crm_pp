@@ -281,7 +281,7 @@ function display_llc_realtime_score(frm, score, breakdown) {
     
     // Create or update the score display card - MINIMAL & COMPACT
     let score_html = `
-        <div id="llc-qualification-banner" style="
+        <div id="qualification-banner" style="
             padding: 10px 15px;
             background: ${indicator_bg};
             border-left: 3px solid ${indicator_color};
@@ -314,9 +314,9 @@ function display_llc_realtime_score(frm, score, breakdown) {
     }
     
     // Method 2: Add prominent banner at the top of the form (below funnel)
-    // Remove any existing LLC banner first
+    // Remove any existing qualification banner first (from any vertical)
     if (frm.$wrapper) {
-        frm.$wrapper.find('#llc-qualification-banner').remove();
+        frm.$wrapper.find('#qualification-banner').remove();
         
         // Insert the banner right after the form-dashboard (where the funnel is)
         let $form_layout = frm.$wrapper.find('.form-layout');

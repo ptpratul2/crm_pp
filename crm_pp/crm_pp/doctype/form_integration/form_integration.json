@@ -1,0 +1,223 @@
+{
+ "actions": [],
+ "autoname": "field:form_identifier",
+ "creation": "2025-10-28 17:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "form_identifier",
+  "form_title",
+  "column_break_3",
+  "is_active",
+  "require_api_key",
+  "section_break_5",
+  "description",
+  "section_break_7",
+  "field_mappings",
+  "section_break_9",
+  "webhook_url",
+  "usage_section",
+  "html_example",
+  "javascript_example",
+  "section_break_14",
+  "total_submissions",
+  "successful_submissions",
+  "column_break_17",
+  "failed_submissions",
+  "last_submission_date"
+ ],
+ "fields": [
+  {
+   "description": "Unique identifier (e.g., 'corporate_training', 'perm_staffing')",
+   "fieldname": "form_identifier",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Form Identifier",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "Display name for this form",
+   "fieldname": "form_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Form Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "description": "Uncheck to temporarily disable this form integration",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "default": "0",
+   "description": "If checked, API key must be provided in webhook requests",
+   "fieldname": "require_api_key",
+   "fieldtype": "Check",
+   "label": "Require API Key"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Field Mappings"
+  },
+  {
+   "description": "Map source fields from your HTML form to Lead fields",
+   "fieldname": "field_mappings",
+   "fieldtype": "Table",
+   "label": "Field Mappings",
+   "options": "Form Field Map",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Webhook Configuration"
+  },
+  {
+   "description": "Use this URL in your external forms",
+   "fieldname": "webhook_url",
+   "fieldtype": "Code",
+   "label": "Webhook URL",
+   "options": "HTML",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "usage_section",
+   "fieldtype": "Section Break",
+   "label": "Usage Examples"
+  },
+  {
+   "fieldname": "html_example",
+   "fieldtype": "Code",
+   "label": "HTML Form Example",
+   "options": "HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "javascript_example",
+   "fieldtype": "Code",
+   "label": "JavaScript Example",
+   "options": "JavaScript",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_submissions",
+   "fieldtype": "Int",
+   "label": "Total Submissions",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "successful_submissions",
+   "fieldtype": "Int",
+   "label": "Successful",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "failed_submissions",
+   "fieldtype": "Int",
+   "label": "Failed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_submission_date",
+   "fieldtype": "Datetime",
+   "label": "Last Submission",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Webhook Log",
+   "link_fieldname": "form_identifier"
+  }
+ ],
+ "modified": "2025-10-28 23:43:15.614333",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Form Integration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

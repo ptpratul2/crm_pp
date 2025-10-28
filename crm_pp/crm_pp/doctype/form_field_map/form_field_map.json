@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "creation": "2025-10-28 17:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source_field",
+  "target_field",
+  "column_break_3",
+  "is_required",
+  "default_value",
+  "section_break_6",
+  "transformation_type",
+  "transformation_rule"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_field",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Field",
+   "reqd": 1,
+   "description": "Field name from HTML form (e.g., 'email', 'first_name', '00N5g00000JKqLY')"
+  },
+  {
+   "fieldname": "target_field",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Target Lead Field",
+   "options": "\nlead_name\nfirst_name\nlast_name\nemail_id\nphone\nmobile_no\ncompany_name\njob_title\nwebsite\nsource\nstatus\nterritory\nindustry\nrequest_type\nmarket_segment\ncustom_vertical\ncustom_sub_vertical\ncustom_subservice\nno_of_employees\ncustom_company_establishment_year\ncustom_turnover_in_inr\nnotes\ncustom_city\ncustom_state",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_required",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Required"
+  },
+  {
+   "fieldname": "default_value",
+   "fieldtype": "Data",
+   "label": "Default Value"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Transformation",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "transformation_type",
+   "fieldtype": "Select",
+   "label": "Transformation Type",
+   "options": "\nNone\nUppercase\nLowercase\nTitle Case\nTrim\nRemove Special Characters\nCustom"
+  },
+  {
+   "fieldname": "transformation_rule",
+   "fieldtype": "Small Text",
+   "label": "Custom Transformation Rule",
+   "depends_on": "eval:doc.transformation_type=='Custom'",
+   "description": "Python expression (use 'value' as variable)"
+  }
+ ],
+ "istable": 1,
+ "modified": "2025-10-28 17:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Form Field Map",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
+

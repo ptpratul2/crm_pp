@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{form_identifier}-{source_field}",
+ "creation": "2025-10-28 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "form_identifier",
+  "source_field",
+  "target_field",
+  "column_break_4",
+  "is_required",
+  "default_value",
+  "section_break_6",
+  "transformation_type",
+  "transformation_rule",
+  "section_break_9",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "form_identifier",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Form Identifier",
+   "reqd": 1,
+   "description": "Unique identifier for the form (e.g., 'corporate_training', 'perm_staffing', or form URL)"
+  },
+  {
+   "fieldname": "source_field",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Field",
+   "reqd": 1,
+   "description": "Field name from the HTML form (e.g., 'email', '00N5g00000JKqLY')"
+  },
+  {
+   "fieldname": "target_field",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Target Lead Field",
+   "options": "\nlead_name\nfirst_name\nlast_name\nemail_id\nphone\nmobile_no\ncompany_name\njob_title\nwebsite\nsource\nstatus\nterritoryindustry\nrequest_type\nmarket_segment\ncustom_vertical\ncustom_sub_vertical\ncustom_subservice\nno_of_employees\ncustom_company_establishment_year\ncustom_turnover_in_inr\nnotes\ncustom_city\ncustom_state",
+   "reqd": 1,
+   "description": "ERPNext Lead field to map to"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_required",
+   "fieldtype": "Check",
+   "label": "Is Required",
+   "description": "If checked, lead creation will fail if this field is missing"
+  },
+  {
+   "fieldname": "default_value",
+   "fieldtype": "Data",
+   "label": "Default Value",
+   "description": "Default value to use if source field is empty"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Transformation"
+  },
+  {
+   "fieldname": "transformation_type",
+   "fieldtype": "Select",
+   "label": "Transformation Type",
+   "options": "\nNone\nUppercase\nLowercase\nTitle Case\nTrim\nRemove Special Characters\nCustom"
+  },
+  {
+   "fieldname": "transformation_rule",
+   "fieldtype": "Small Text",
+   "label": "Custom Transformation Rule",
+   "depends_on": "eval:doc.transformation_type=='Custom'",
+   "description": "Python expression to transform the value (use 'value' as variable, e.g., 'value.replace(\"-\", \"\")')"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-28 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Form Field Mapping",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
+
