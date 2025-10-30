@@ -294,12 +294,12 @@ function calculate_qualification_score(frm) {
         }
     }
 
-    // --- 8. Turnover (6-9 points) ---
+    // --- 8. Turnover (0, 6, 9 points) ---
     if (frm.doc.custom_turnover_in_inr) {
         let turnover_score = 0;
         switch (frm.doc.custom_turnover_in_inr.trim()) {
-            case "Less than 50 Cr": turnover_score = 6; break;
-            case "50 Cr to 200Cr": turnover_score = 8; break;
+            case "Less than 50 Cr": turnover_score = 0; break;
+            case "50 Cr to 200 Cr": turnover_score = 6; break;
             case "200 Cr and Above": turnover_score = 9; break;
         }
         score += turnover_score;
@@ -307,7 +307,7 @@ function calculate_qualification_score(frm) {
         if (turnover_score > 0) {
             breakdown.push(`✓ Turnover (${frm.doc.custom_turnover_in_inr}): ${turnover_score} pts`);
         } else {
-            breakdown.push("✗ Turnover: 0 pts");
+            breakdown.push(`✗ Turnover (${frm.doc.custom_turnover_in_inr}): 0 pts`);
         }
     } else {
         frm.set_value("custom_turnover__50_cr", 0);
@@ -389,7 +389,8 @@ function display_realtime_score(frm, score, breakdown) {
     
     // Method 2: Add prominent banner at the top of the form (below funnel)
     if (frm.$wrapper) {
-        frm.$wrapper.find('#perm-qualification-banner').remove();
+        // Remove ALL qualification banners first to ensure only one is shown
+        frm.$wrapper.find('#temp-qualification-banner, #perm-qualification-banner, #ld-qualification-banner, #franchise-qualification-banner, #llc-qualification-banner').remove();
         let $form_layout = frm.$wrapper.find('.form-layout');
         if ($form_layout.length) {
             $form_layout.prepend(score_html);

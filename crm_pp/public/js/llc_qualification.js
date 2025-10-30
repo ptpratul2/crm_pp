@@ -314,9 +314,9 @@ function display_llc_realtime_score(frm, score, breakdown) {
     }
     
     // Method 2: Add prominent banner at the top of the form (below funnel)
-    // Remove any existing LLC banner first
+    // Remove ALL qualification banners first to ensure only one is shown
     if (frm.$wrapper) {
-        frm.$wrapper.find('#llc-qualification-banner').remove();
+        frm.$wrapper.find('#temp-qualification-banner, #perm-qualification-banner, #ld-qualification-banner, #franchise-qualification-banner, #llc-qualification-banner').remove();
         
         // Insert the banner right after the form-dashboard (where the funnel is)
         let $form_layout = frm.$wrapper.find('.form-layout');

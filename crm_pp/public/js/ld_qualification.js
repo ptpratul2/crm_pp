@@ -327,7 +327,8 @@ function display_ld_realtime_score(frm, score, breakdown) {
     
     // Method 2: Add prominent banner at the top of the form (below funnel)
     if (frm.$wrapper) {
-        frm.$wrapper.find('#ld-qualification-banner').remove();
+        // Remove ALL qualification banners first to ensure only one is shown
+        frm.$wrapper.find('#temp-qualification-banner, #perm-qualification-banner, #ld-qualification-banner, #franchise-qualification-banner, #llc-qualification-banner').remove();
         let $form_layout = frm.$wrapper.find('.form-layout');
         if ($form_layout.length) {
             $form_layout.prepend(score_html);

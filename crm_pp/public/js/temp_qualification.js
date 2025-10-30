@@ -229,20 +229,28 @@ function calculate_temp_qualification_score(frm) {
     } else {
         breakdown.push("✗ Recruitment Do-ability Approved: 0 pts");
     }
+    // --- 6. Company Type (4-6 points) ---
+    if (frm.doc.custom_company_type && frm.doc.custom_company_type.trim()) {
+        const type = frm.doc.custom_company_type.trim();
+        
+        console.log("Company Type detected:", type); // DEBUG
 
-    // --- 6. Company Type (6 points) ---
-    if (["Private Limited", "Listed"].includes(frm.doc.custom_company_type)) {
-        score += 6;
-        frm.set_value("custom_company_temp", 1);
-        breakdown.push(`✓ Company Type (${frm.doc.custom_company_type}): 6 pts`);
-    } else {
-        frm.set_value("custom_company_temp", 0);
-        if (frm.doc.custom_company_type) {
-            breakdown.push(`✗ Company Type (${frm.doc.custom_company_type}): 0 pts`);
+        if (["Private Limited", "Listed"].includes(type)) {
+            score += 6;
+            frm.set_value("custom_company_temp", 1);
+            breakdown.push(`✓ Company Type (${type}): 6 pts`);
         } else {
-            breakdown.push("✗ Company Type: Not provided");
+            // All other company types get 4 points
+            score += 4;
+            frm.set_value("custom_company_temp", 1);
+            breakdown.push(`○ Company Type (${type}): 4 pts`);
         }
+    } else {
+        // This will run when the field is empty
+        frm.set_value("custom_company_temp", 0);
+        breakdown.push("✗ Company Type: Not provided");
     }
+
 
     // --- 7. Employment Tenure (6 points) - MANDATORY field, score based on value ---
     if (frm.doc.custom_employment_tenure_temp && frm.doc.custom_employment_tenure_temp > 1) {
@@ -286,25 +294,28 @@ function calculate_temp_qualification_score(frm) {
         breakdown.push("✗ Recruitment Volume: Not provided");
     }
 
-    // --- 9. Turnover (6-9 points) ---
+    // --- 9. Turnover (0, 6, 9 points) ---
     if (frm.doc.custom_turnover_in_inr) {
         let turnover_score = 0;
         switch (frm.doc.custom_turnover_in_inr.trim()) {
+            case "Less than 50 Cr": 
+                turnover_score = 0; 
+                break;
             case "50 Cr to 200 Cr": 
                 turnover_score = 6; 
                 break;
-            case "200 and above": 
+            case "200 Cr and Above": 
                 turnover_score = 9; 
                 break;
             default: 
                 turnover_score = 0;
         }
         score += turnover_score;
-        frm.set_value("custom_turnover_temp", 1); // Set checkbox if any value is selected
+        frm.set_value("custom_turnover_temp", turnover_score > 0 ? 1 : 0);
         if (turnover_score > 0) {
             breakdown.push(`✓ Turnover (${frm.doc.custom_turnover_in_inr}): ${turnover_score} pts`);
         } else {
-            breakdown.push("✗ Turnover: 0 pts");
+            breakdown.push(`✗ Turnover (${frm.doc.custom_turnover_in_inr}): 0 pts`);
         }
     } else {
         frm.set_value("custom_turnover_temp", 0);
@@ -379,7 +390,8 @@ function display_temp_realtime_score(frm, score, breakdown) {
     
     // Method 2: Add prominent banner at the top of the form (below funnel)
     if (frm.$wrapper) {
-        frm.$wrapper.find('#temp-qualification-banner').remove();
+        // Remove ALL qualification banners first to ensure only one is shown
+        frm.$wrapper.find('#temp-qualification-banner, #perm-qualification-banner, #ld-qualification-banner, #franchise-qualification-banner, #llc-qualification-banner').remove();
         let $form_layout = frm.$wrapper.find('.form-layout');
         if ($form_layout.length) {
             $form_layout.prepend(score_html);

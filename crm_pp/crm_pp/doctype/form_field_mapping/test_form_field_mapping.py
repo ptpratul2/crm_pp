@@ -66,3 +66,8 @@ class TestFormFieldMapping(FrappeTestCase):
 		frappe.db.delete("Form Field Mapping", {"form_identifier": "test_form"})
 		frappe.db.commit()
 
+
+
+
+
+

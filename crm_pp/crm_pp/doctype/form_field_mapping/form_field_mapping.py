@@ -30,3 +30,8 @@ class FormFieldMapping(Document):
 			except Exception as e:
 				frappe.throw(f"Invalid transformation rule: {str(e)}")
 
+
+
+
+
+

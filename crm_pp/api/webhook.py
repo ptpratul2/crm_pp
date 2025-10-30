@@ -98,6 +98,9 @@ def handle_lead_webhook():
 		# Transform and map fields
 		lead_data = transform_payload(payload, mappings)
 		
+		# Apply conditional Lead Owner mapping based on Vertical
+		lead_data = apply_lead_owner_mapping(lead_data, form_identifier)
+		
 		# Create lead
 		lead = create_lead(lead_data)
 		
@@ -107,9 +110,16 @@ def handle_lead_webhook():
 		# Update Form Integration statistics
 		if frappe.db.exists("Form Integration", form_identifier):
 			try:
-				form_doc = frappe.get_doc("Form Integration", form_identifier)
-				form_doc.update_statistics(success=True)
-			except Exception:
+				frappe.db.sql("""
+					UPDATE `tabForm Integration`
+					SET total_submissions = COALESCE(total_submissions, 0) + 1,
+						successful_submissions = COALESCE(successful_submissions, 0) + 1,
+						last_submission_date = %s
+					WHERE name = %s
+				""", (frappe.utils.now(), form_identifier))
+				frappe.db.commit()
+			except Exception as e:
+				frappe.log_error(f"Failed to update statistics: {str(e)}", "Stats Update Error")
 				pass  # Don't fail webhook if stats update fails
 		
 		# Log success
@@ -134,14 +144,22 @@ def handle_lead_webhook():
 	except Exception as e:
 		processing_time = time.time() - start_time
 		error_message = str(e)
-		frappe.log_error(f"Webhook Error: {error_message}", "Lead Webhook Handler")
+		traceback_str = frappe.get_traceback()
+		frappe.log_error(f"Webhook Error: {error_message}\n\nTraceback:\n{traceback_str}", "Lead Webhook Handler")
 		
 		# Update Form Integration statistics
 		if 'form_identifier' in locals() and frappe.db.exists("Form Integration", form_identifier):
 			try:
-				form_doc = frappe.get_doc("Form Integration", form_identifier)
-				form_doc.update_statistics(success=False)
-			except Exception:
+				frappe.db.sql("""
+					UPDATE `tabForm Integration`
+					SET total_submissions = COALESCE(total_submissions, 0) + 1,
+						failed_submissions = COALESCE(failed_submissions, 0) + 1,
+						last_submission_date = %s
+					WHERE name = %s
+				""", (frappe.utils.now(), form_identifier))
+				frappe.db.commit()
+			except Exception as e:
+				frappe.log_error(f"Failed to update statistics: {str(e)}", "Stats Update Error")
 				pass  # Don't fail webhook if stats update fails
 		
 		# Log failure
@@ -223,21 +241,26 @@ def transform_payload(payload, mappings):
 	missing_required = []
 	
 	for mapping in mappings:
-		source_field = mapping['source_field']
-		target_field = mapping['target_field']
+		# Handle both dict and object access
+		source_field = mapping.get('source_field') if isinstance(mapping, dict) else mapping.source_field
+		target_field = mapping.get('target_field') if isinstance(mapping, dict) else mapping.target_field
 		value = payload.get(source_field)
 		
+		# Get mapping properties
+		is_required = mapping.get('is_required') if isinstance(mapping, dict) else getattr(mapping, 'is_required', 0)
+		default_value = mapping.get('default_value') if isinstance(mapping, dict) else getattr(mapping, 'default_value', None)
+		
 		# Check required fields
-		if mapping.get('is_required') and not value:
-			if mapping.get('default_value'):
-				value = mapping.get('default_value')
+		if is_required and not value:
+			if default_value:
+				value = default_value
 			else:
 				missing_required.append(source_field)
 				continue
 		
 		# Use default value if empty
-		if not value and mapping.get('default_value'):
-			value = mapping.get('default_value')
+		if not value and default_value:
+			value = default_value
 		
 		# Apply transformation
 		if value:
@@ -255,7 +278,8 @@ def transform_payload(payload, mappings):
 
 def apply_transformation(value, mapping):
 	"""Apply transformation rules to field value"""
-	transformation_type = mapping.get('transformation_type')
+	# Handle both dict and object access
+	transformation_type = mapping.get('transformation_type') if isinstance(mapping, dict) else getattr(mapping, 'transformation_type', None)
 	
 	if not transformation_type or transformation_type == 'None':
 		return value
@@ -274,7 +298,7 @@ def apply_transformation(value, mapping):
 		import re
 		return re.sub(r'[^a-zA-Z0-9\s]', '', value)
 	elif transformation_type == 'Custom':
-		rule = mapping.get('transformation_rule')
+		rule = mapping.get('transformation_rule') if isinstance(mapping, dict) else getattr(mapping, 'transformation_rule', None)
 		if rule:
 			try:
 				# Execute custom transformation
@@ -284,6 +308,60 @@ def apply_transformation(value, mapping):
 				return value
 	
 	return value
+
+
+def apply_lead_owner_mapping(lead_data, form_identifier):
+	"""Apply conditional Lead Owner mapping based on Vertical from Form Integration configuration"""
+	# Check if vertical is present in lead_data
+	vertical = lead_data.get('custom_vertical')
+	
+	if not vertical:
+		return lead_data
+	
+	# Get the Form Integration document
+	if not frappe.db.exists("Form Integration", form_identifier):
+		return lead_data
+	
+	try:
+		form_integration = frappe.get_doc("Form Integration", form_identifier)
+		
+		# Check if there are any lead owner mappings configured
+		if not form_integration.lead_owner_mappings:
+			# Fallback to hardcoded mappings for backward compatibility
+			vertical_owner_map = {
+				"Permanent Staffing": "shreya@promptpersonnel.com",
+				"Temporary Staffing": "mayuresh@promptpersonnel.com",
+			}
+			
+			if vertical in vertical_owner_map:
+				lead_owner_email = vertical_owner_map[vertical]
+				if frappe.db.exists('User', lead_owner_email):
+					lead_data['lead_owner'] = lead_owner_email
+			
+			return lead_data
+		
+		# Look for matching vertical in configured mappings
+		for mapping in form_integration.lead_owner_mappings:
+			if mapping.vertical == vertical:
+				lead_owner_email = mapping.lead_owner
+				
+				# Verify that the user exists in the system
+				if frappe.db.exists('User', lead_owner_email):
+					lead_data['lead_owner'] = lead_owner_email
+				else:
+					frappe.log_error(
+						f"Lead owner '{lead_owner_email}' not found for vertical '{vertical}' in form '{form_identifier}'",
+						"Lead Owner Mapping Warning"
+					)
+				break  # Use first matching mapping
+		
+	except Exception as e:
+		frappe.log_error(
+			f"Error applying lead owner mapping: {str(e)}",
+			"Lead Owner Mapping Error"
+		)
+	
+	return lead_data
 
 
 def create_lead(lead_data):
@@ -301,11 +379,19 @@ def create_lead(lead_data):
 		else:
 			lead_data['lead_name'] = 'Web Lead'
 	
+	# Store lead_owner if set (to override __user default)
+	assigned_lead_owner = lead_data.get('lead_owner')
+	
 	# Create lead document
 	lead = frappe.get_doc({
 		"doctype": "Lead",
 		**lead_data
 	})
+	
+	# Override the __user default by explicitly setting lead_owner again
+	# This ensures it doesn't get set to "Guest" for guest user requests
+	if assigned_lead_owner:
+		lead.lead_owner = assigned_lead_owner
 	
 	lead.insert(ignore_permissions=True)
 	frappe.db.commit()
@@ -433,4 +519,28 @@ def test_field_transformation(mapping_name, test_value):
 	})
 	
 	return result
+
+
+def create_webhook_log(form_identifier, raw_payload, status, error_message=None, lead_id=None, lead_name=None, processing_time=None, ip_address=None, user_agent=None):
+	"""Create a webhook log entry"""
+	try:
+		log = frappe.get_doc({
+			"doctype": "Webhook Log",
+			"timestamp": frappe.utils.now(),
+			"form_identifier": str(form_identifier) if form_identifier else "Unknown",
+			"raw_payload": json.dumps(raw_payload, indent=2) if isinstance(raw_payload, dict) else str(raw_payload),
+			"status": status,
+			"error_message": error_message,
+			"lead_id": lead_id,
+			"lead_name": lead_name,
+			"processing_time": processing_time,
+			"ip_address": ip_address,
+			"user_agent": user_agent
+		})
+		log.insert(ignore_permissions=True)
+		frappe.db.commit()
+		return log.name
+	except Exception as e:
+		frappe.log_error(f"Failed to create webhook log: {str(e)}", "Webhook Log Creation Error")
+		return None
 
