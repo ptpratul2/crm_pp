@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-28 13:50:47.131438",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nearing_closure_section",
+  "opportunity_name",
+  "stage",
+  "opportunityowner",
+  "column_break_biuj",
+  "client",
+  "column_break_atid",
+  "expected_close_date",
+  "column_break_moxp",
+  "value"
+ ],
+ "fields": [
+  {
+   "fieldname": "nearing_closure_section",
+   "fieldtype": "Section Break",
+   "label": "Nearing Closure"
+  },
+  {
+   "fieldname": "opportunity_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Opportunity Name",
+   "options": "Opportunity"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Stage",
+   "options": "\nNegotiation\nAgreement"
+  },
+  {
+   "fieldname": "opportunityowner",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "OpportunityOwner",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_biuj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_atid",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_close_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expected Close Date"
+  },
+  {
+   "fieldname": "column_break_moxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Value"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-10-30 09:18:55.579112",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Nearing Closure",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
