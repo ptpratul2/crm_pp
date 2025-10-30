@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{salesperson}",
+ "creation": "2025-10-28 13:28:54.882779",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "revenue_tracker_details_section",
+  "salesperson",
+  "invoice_number",
+  "payment_receipt_date",
+  "monthly_target",
+  "achievement_",
+  "column_break_zyoq",
+  "vertical__business_unit",
+  "invoice_date",
+  "outstanding",
+  "quarterly_target",
+  "remarks__notes",
+  "column_break_nymp",
+  "region__branch",
+  "invoice_amount",
+  "payment_status",
+  "target_for_selected_range",
+  "column_break_vvkj",
+  "client",
+  "payment_received",
+  "annual_target",
+  "revenue_received"
+ ],
+ "fields": [
+  {
+   "fieldname": "revenue_tracker_details_section",
+   "fieldtype": "Section Break",
+   "label": "Revenue Tracker Details"
+  },
+  {
+   "fieldname": "salesperson",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Salesperson",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "payment_receipt_date",
+   "fieldtype": "Date",
+   "label": "Payment Receipt Date"
+  },
+  {
+   "fieldname": "monthly_target",
+   "fieldtype": "Float",
+   "label": "Monthly Target "
+  },
+  {
+   "fieldname": "achievement_",
+   "fieldtype": "Float",
+   "label": "Achievement %"
+  },
+  {
+   "fieldname": "column_break_zyoq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vertical__business_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vertical / Business Unit",
+   "options": "Vertical"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "outstanding",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Outstanding "
+  },
+  {
+   "fieldname": "quarterly_target",
+   "fieldtype": "Float",
+   "label": "Quarterly Target "
+  },
+  {
+   "fieldname": "remarks__notes",
+   "fieldtype": "Small Text",
+   "label": "Remarks / Notes"
+  },
+  {
+   "fieldname": "column_break_nymp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "region__branch",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Region / Branch",
+   "options": "\nMumbai\nPune\nGCC\nOthers"
+  },
+  {
+   "fieldname": "invoice_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Invoice Amount "
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Status",
+   "options": "\nPaid\nPartial\nUnpaid"
+  },
+  {
+   "fieldname": "target_for_selected_range",
+   "fieldtype": "Float",
+   "label": "Target for Selected Range "
+  },
+  {
+   "fieldname": "column_break_vvkj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "payment_received",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Payment Received "
+  },
+  {
+   "fieldname": "annual_target",
+   "fieldtype": "Currency",
+   "label": "Annual Target "
+  },
+  {
+   "fieldname": "revenue_received",
+   "fieldtype": "Float",
+   "label": "Revenue Received "
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-28 17:25:18.190309",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Revenue Tracker",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
