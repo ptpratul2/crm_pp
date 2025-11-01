@@ -2,6 +2,8 @@ __version__ = "0.0.1"
 
 
 
+
+
 from erpnext.crm.doctype.opportunity import opportunity
 from crm_pp.crm_pp.opportunity_override import do_nothing_after_insert
 
@@ -13,4 +15,3 @@ from crm_pp.crm_pp.custom_email_template import custom_send_welcome_mail_to_user
 
 User.send_welcome_mail_to_user = custom_send_welcome_mail_to_user
 
-print("✅ User.send_welcome_mail_to_user has been overridden successfully===========.")
