@@ -197,6 +197,11 @@ doc_events = {
         "validate": [
             "crm_pp.crm_pp.create_customer_from_lead.create_customer_from_lead"
         ]
+    },
+    "Opportunity": {
+        "validate": [
+            "crm_pp.crm_pp.opportunity_handler.set_customer_id"
+        ]
     }
 }
 
@@ -256,7 +261,7 @@ override_whitelisted_methods = {
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "crm_pp.task.get_dashboard_data"
+# 	"Opportunity": "crm_pp.crm_pp.opportunity_dashboard.get_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
