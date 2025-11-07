@@ -1,0 +1,554 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2025-10-27 15:44:51.966886",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "sample_types",
+  "crackle",
+  "average_kv_100c_four_significant_figure",
+  "average_total_base_number",
+  "ccs",
+  "ccs3",
+  "a",
+  "calcium",
+  "phosphorus",
+  "magnesium",
+  "ti_astm_d4951_",
+  "reported_flash_point_fp",
+  "refractive_index",
+  "kv",
+  "average",
+  "boiling_point",
+  "density_15c",
+  "viscosity",
+  "viscosity_index",
+  "viscosity1",
+  "sequence_ii_935c_tendency",
+  "hths",
+  "sequence_iii_240c_stability",
+  "seq2",
+  "average_total_acid_number",
+  "copper_corrosion_astm_d130",
+  "noack_volatality",
+  "iso_4406",
+  "total_acid_number_astm_d974_mg_of_kog",
+  "mrv",
+  "m",
+  "demulsibibility_astm_d1401",
+  "phenolic_inhibitor_ams_872_wt",
+  "filterability_1_st_100_ml_08_\u00b5mams_1082_sec",
+  "copper_strip_corrosion_astm_d130",
+  "sulphated_ash__wt_astm_d874",
+  "rust_preventive_astm_d665b",
+  "column_break_xjhu",
+  "item_name",
+  "appearance_visual",
+  "colour_astm_d1500",
+  "average_kv_40c_four_significant_figure",
+  "ccs_1",
+  "ccs_2",
+  "average_four_significant_figure",
+  "ccs_9",
+  "zinc",
+  "boron",
+  "molybdenum",
+  "colour_visual",
+  "ftir_comparison_with_std",
+  "sequence_ii_935c_stability",
+  "data_rkpq",
+  "water_content_karl_fischer_volumetricastm_d1123_",
+  "srno_of_pack",
+  "mrv_viscosity_astm_d4684",
+  "sequence_i_240c_stability",
+  "reported_pour_point_nearest_1c",
+  "odour",
+  "viscosity4",
+  "sequence_iii_240c_tendency",
+  "seq1",
+  "water_content_astm_d6304",
+  "reported_flash_point_nearest_1c",
+  "sequence_i_240c_tendency",
+  "demulsibility_astm_d1401",
+  "saponification_value_astm_d94",
+  "viscosity9",
+  "mrv1",
+  "m2",
+  "air_release_astm_d3427_min",
+  "nitrogen__wt_ams_1208",
+  "brookfield"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "sample_types",
+   "fieldtype": "Link",
+   "label": "Sample Types",
+   "options": "Sample Types"
+  },
+  {
+   "fieldname": "crackle",
+   "fieldtype": "Data",
+   "label": "Crackle Test (Inhouse)",
+   "length": 20
+  },
+  {
+   "fieldname": "average_kv_100c_four_significant_figure",
+   "fieldtype": "Data",
+   "label": "Kinematic Viscosity@ 100C (ASTM D445) (mm\u00b2/s)",
+   "length": 20
+  },
+  {
+   "fieldname": "average_total_base_number",
+   "fieldtype": "Data",
+   "label": "TBN (ASTM D2896) (mg of koH/g)",
+   "length": 20
+  },
+  {
+   "fieldname": "ccs",
+   "fieldtype": "Data",
+   "label": "CCS @ -20 (ASTM D5293) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "ccs3",
+   "fieldtype": "Data",
+   "label": "CCS @ -30 (ASTM D5293) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "a",
+   "fieldtype": "Data",
+   "label": "Density @ 15C (ASTM D4052) (g/ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "calcium",
+   "fieldtype": "Data",
+   "label": "Calcium, % wt (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "phosphorus",
+   "fieldtype": "Data",
+   "label": "Phosphorus, % wt (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "magnesium",
+   "fieldtype": "Data",
+   "label": "Magnesium, % wt (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "ti_astm_d4951_",
+   "fieldtype": "Data",
+   "label": "Ti (ASTM D4951) (%)",
+   "length": 20
+  },
+  {
+   "fieldname": "reported_flash_point_fp",
+   "fieldtype": "Data",
+   "label": "Flash Point, PMCC (ASTM D93) (\u00b0C)",
+   "length": 20
+  },
+  {
+   "fieldname": "refractive_index",
+   "fieldtype": "Data",
+   "label": "Refractive Index (NFT method)",
+   "length": 20
+  },
+  {
+   "fieldname": "kv",
+   "fieldtype": "Data",
+   "label": "Kinematic Viscosity@ -40C (ASTM D445) (mm\u00b2/s)",
+   "length": 20
+  },
+  {
+   "fieldname": "average",
+   "fieldtype": "Data",
+   "label": "Density @20.0\u00b0C (ASTM D4052) (g/ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "boiling_point",
+   "fieldtype": "Data",
+   "label": "Boiling Point (ASTM D1120) (\u00b0C)",
+   "length": 20
+  },
+  {
+   "fieldname": "density_15c",
+   "fieldtype": "Data",
+   "label": "Density @ 15C, Relative (g/ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "viscosity",
+   "fieldtype": "Data",
+   "label": "Viscosity, MRV / Yield Stress -25C (15W) (ASTM D4684) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "viscosity_index",
+   "fieldtype": "Data",
+   "label": "Viscosity Index (ASTMD2270)",
+   "length": 20
+  },
+  {
+   "fieldname": "viscosity1",
+   "fieldtype": "Data",
+   "label": "Viscosity, Blend @100\u00b0C (ASTM D445) (mm\u00b2/s)",
+   "length": 20
+  },
+  {
+   "fieldname": "sequence_ii_935c_tendency",
+   "fieldtype": "Data",
+   "label": "Foam Sequence II, Tendency (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "hths",
+   "fieldtype": "Data",
+   "label": "Viscosity, HTHS 150C (ASTM D4683) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "sequence_iii_240c_stability",
+   "fieldtype": "Data",
+   "label": "Foam Sequence III, Stability (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "seq2",
+   "fieldtype": "Data",
+   "label": "Foam Sequence IV, Stability (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "average_total_acid_number",
+   "fieldtype": "Data",
+   "label": "TAN (ASTM D664) (mg of koH/gm)",
+   "length": 20
+  },
+  {
+   "fieldname": "copper_corrosion_astm_d130",
+   "fieldtype": "Data",
+   "label": "Copper Corrosion (ASTM D130)",
+   "length": 20
+  },
+  {
+   "fieldname": "noack_volatality",
+   "fieldtype": "Data",
+   "label": "Noack Volatality (ASTM D5800)",
+   "length": 20
+  },
+  {
+   "fieldname": "iso_4406",
+   "fieldtype": "Data",
+   "label": "ISO 4406",
+   "length": 15
+  },
+  {
+   "fieldname": "total_acid_number_astm_d974_mg_of_kog",
+   "fieldtype": "Data",
+   "label": "Total Acid Number (ASTM D974) (mg of Ko/g)",
+   "length": 20
+  },
+  {
+   "fieldname": "mrv",
+   "fieldtype": "Data",
+   "label": "MRV  Yield Stress -35C (ASTM D4684) (Pa)",
+   "length": 20
+  },
+  {
+   "fieldname": "m",
+   "fieldtype": "Data",
+   "label": "MRV  Yield Stress -20C (ASTM D4684) (Pa)",
+   "length": 20
+  },
+  {
+   "fieldname": "demulsibibility_astm_d1401",
+   "fieldtype": "Data",
+   "label": "Demulsibibility (ASTM D1401)",
+   "length": 20
+  },
+  {
+   "fieldname": "phenolic_inhibitor_ams_872_wt",
+   "fieldtype": "Data",
+   "label": "Phenolic Inhibitor (AMS 872) (%wt)",
+   "length": 20
+  },
+  {
+   "fieldname": "filterability_1_st_100_ml_08_\u00b5mams_1082_sec",
+   "fieldtype": "Data",
+   "label": "Filterability, 1 st 100 ml, 0.8 \u00b5m(AMS 1082) (Sec)",
+   "length": 10
+  },
+  {
+   "fieldname": "copper_strip_corrosion_astm_d130",
+   "fieldtype": "Data",
+   "label": "Copper Strip Corrosion (ASTM D130)",
+   "length": 10
+  },
+  {
+   "fieldname": "sulphated_ash__wt_astm_d874",
+   "fieldtype": "Data",
+   "label": "Sulphated Ash, % wt (ASTM D874)",
+   "length": 10
+  },
+  {
+   "fieldname": "rust_preventive_astm_d665b",
+   "fieldtype": "Data",
+   "label": "Rust Preventive (ASTM D665B)",
+   "length": 10
+  },
+  {
+   "fieldname": "column_break_xjhu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "length": 100
+  },
+  {
+   "fieldname": "appearance_visual",
+   "fieldtype": "Small Text",
+   "label": "Appearance (Visual)"
+  },
+  {
+   "fieldname": "colour_astm_d1500",
+   "fieldtype": "Data",
+   "label": "Colour (ASTM D1500)",
+   "length": 25
+  },
+  {
+   "fieldname": "average_kv_40c_four_significant_figure",
+   "fieldtype": "Data",
+   "label": "Kinematic Viscosity@ 40C (ASTM D445) (mm\u00b2/s)",
+   "length": 20
+  },
+  {
+   "fieldname": "ccs_1",
+   "fieldtype": "Data",
+   "label": "CCS @ -15 (ASTM D5293) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "ccs_2",
+   "fieldtype": "Data",
+   "label": "CCS @ -25 (ASTM D5293) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "average_four_significant_figure",
+   "fieldtype": "Data",
+   "label": "Density @29.5\u00b0C (ASTM D4052) (g/ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "ccs_9",
+   "fieldtype": "Data",
+   "label": "CCS @ -35 (ASTM D5293) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "zinc",
+   "fieldtype": "Data",
+   "label": "Zinc, % wt (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "boron",
+   "fieldtype": "Data",
+   "label": "Boron, % wt (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "molybdenum",
+   "fieldtype": "Data",
+   "label": "Molybdenum, % (ASTM D4951)",
+   "length": 20
+  },
+  {
+   "fieldname": "colour_visual",
+   "fieldtype": "Data",
+   "label": "color (Visual)",
+   "length": 20
+  },
+  {
+   "fieldname": "ftir_comparison_with_std",
+   "fieldtype": "Data",
+   "label": "FTIR",
+   "length": 30
+  },
+  {
+   "fieldname": "sequence_ii_935c_stability",
+   "fieldtype": "Data",
+   "label": "Foam Sequence II, Stability (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "data_rkpq",
+   "fieldtype": "Data",
+   "label": "pH (SAE J1703/ASTM D 1287)",
+   "length": 20
+  },
+  {
+   "fieldname": "water_content_karl_fischer_volumetricastm_d1123_",
+   "fieldtype": "Data",
+   "label": "Water Content Karl Fischer (volumetric)(ASTM D1123) (%)",
+   "length": 20
+  },
+  {
+   "fieldname": "srno_of_pack",
+   "fieldtype": "Data",
+   "label": "Sr.No of Pack",
+   "length": 50
+  },
+  {
+   "fieldname": "mrv_viscosity_astm_d4684",
+   "fieldtype": "Data",
+   "label": "Viscosity, MRV / Yield Stress -20C (20W) (ASTM D4684)  (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "sequence_i_240c_stability",
+   "fieldtype": "Data",
+   "label": "Foam Sequence I, Stability (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "reported_pour_point_nearest_1c",
+   "fieldtype": "Data",
+   "label": "Pour Point (ASTM D97) (\u00b0C)",
+   "length": 20
+  },
+  {
+   "fieldname": "odour",
+   "fieldtype": "Data",
+   "label": "Odour",
+   "length": 30
+  },
+  {
+   "fieldname": "viscosity4",
+   "fieldtype": "Data",
+   "label": "Viscosity, MRV / Yield Stress -30C (10W) (ASTM D4684) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "sequence_iii_240c_tendency",
+   "fieldtype": "Data",
+   "label": "Foam Sequence III, Tendency (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "seq1",
+   "fieldtype": "Data",
+   "label": "Foam Sequence IV, Tendency (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "water_content_astm_d6304",
+   "fieldtype": "Data",
+   "label": "Water Content (ASTM D6304)(%)",
+   "length": 20
+  },
+  {
+   "fieldname": "reported_flash_point_nearest_1c",
+   "fieldtype": "Data",
+   "label": "Flash Point (ASTM D92) (\u00b0C)",
+   "length": 20
+  },
+  {
+   "fieldname": "sequence_i_240c_tendency",
+   "fieldtype": "Data",
+   "label": "Foam Sequence I, Tendency (ml)",
+   "length": 20
+  },
+  {
+   "fieldname": "demulsibility_astm_d1401",
+   "fieldtype": "Data",
+   "label": "Demulsibility (ASTM D1401)",
+   "length": 20
+  },
+  {
+   "fieldname": "saponification_value_astm_d94",
+   "fieldtype": "Data",
+   "label": "Saponification Value (ASTM D94)",
+   "length": 20
+  },
+  {
+   "fieldname": "viscosity9",
+   "fieldtype": "Data",
+   "label": "Viscosity, MRV / Yield Stress -35C (10W) (ASTM D4684) (cP)",
+   "length": 20
+  },
+  {
+   "fieldname": "mrv1",
+   "fieldtype": "Data",
+   "label": "MRV  Yield Stress -30C (ASTM D4684) (Pa)",
+   "length": 20
+  },
+  {
+   "fieldname": "m2",
+   "fieldtype": "Data",
+   "label": "MRV  Yield Stress -25C (ASTM D4684) (Pa)",
+   "length": 20
+  },
+  {
+   "fieldname": "air_release_astm_d3427_min",
+   "fieldtype": "Data",
+   "label": "Air Release (ASTM D3427) (Min)",
+   "length": 20
+  },
+  {
+   "fieldname": "nitrogen__wt_ams_1208",
+   "fieldtype": "Data",
+   "label": "Nitrogen, % wt (AMS 1208)",
+   "length": 10
+  },
+  {
+   "fieldname": "brookfield",
+   "fieldtype": "Data",
+   "label": "brookfield Viscosity @-26C (ASTM D2983) (m.pas)",
+   "length": 10
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-06 13:59:41.144228",
+ "modified_by": "Administrator",
+ "module": "Custom App",
+ "name": "Sample Parameters",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

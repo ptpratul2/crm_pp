@@ -1,0 +1,2094 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-27 13:22:51.959169",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sample_name",
+  "date_and_time_of_sample_receipt",
+  "batch_sizepack_size",
+  "appearance_visual",
+  "apperance_html",
+  "colour_astm_d1500",
+  "colour_html",
+  "colour_visual",
+  "colour_visual_html",
+  "crackle",
+  "crackle_html",
+  "customer_name",
+  "column_break_qxkv",
+  "sample_registration_no",
+  "tankervehiclebktankfilling_line_no",
+  "batch_no",
+  "tested_by",
+  "sample_parameters",
+  "container_sr_no",
+  "sr_no_html",
+  "odour",
+  "odour_html",
+  "name_of_customer",
+  "type_of_sample",
+  "section_break_zifa",
+  "pass_or_fail",
+  "remark_if_any",
+  "date_of_filling",
+  "date_of_mfg",
+  "column_break_sdim",
+  "date_of_analysis_completed",
+  "verified_by",
+  "sku_code",
+  "filled_date",
+  "date_of_expiry",
+  "iso_tab",
+  "iso_4406__nas_1638_section",
+  "iso_template_name",
+  "iso_and_nas",
+  "iso_html",
+  "viscosity_tab",
+  "kinematic_viscosity_100c_astm_d445_section",
+  "table_template",
+  "viscometer_id_kv_100c",
+  "thermometer_id_kv_100c",
+  "kinematic_viscosity_100c",
+  "kv_100c_html",
+  "kinematic_viscosity_40c_astm_d445_section",
+  "kv_40_table_template",
+  "viscometer_id_kv_40c",
+  "thermometer_id_kv_40c",
+  "kinematic_viscosity_40c",
+  "kv_40_html",
+  "viscosity_blend_astm_d445_section",
+  "blend_template",
+  "viscosity_blend",
+  "blend_html",
+  "viscosity_index_astm_d2270_section",
+  "viscosity_index",
+  "vi_html",
+  "kinematic_viscosity_astm_d7042_section",
+  "kv_template",
+  "kinematic_viscosity",
+  "kv_html100",
+  "brookfield_viscosity_astm_d2983_section",
+  "brookfield_template",
+  "test_temprature",
+  "brookfield_viscosity",
+  "brookfield_html",
+  "kv_minus40c_section",
+  "kv_minus40c_in_cst_iso_3104",
+  "kv_minus40_html",
+  "kv378c_section",
+  "kv_378_template",
+  "viscometer_id_kv_378c",
+  "thermometer_id_kv_378c",
+  "kinematic_viscosity_378c",
+  "kv_378_html",
+  "viscosity_100_deg_c_astm_d6278_section",
+  "viscosity_100_deg_c_astm_d6278",
+  "viscosity_html",
+  "density_tab",
+  "density__150c_astm_d4052astm_d1298_section",
+  "density_15_template",
+  "method",
+  "density_15c",
+  "density_15c_html",
+  "density__200c_astm_d4052astm_d1298_section",
+  "density_20_template",
+  "density_20c_method",
+  "density_20c",
+  "density_20c_html",
+  "density_295c_tab_section",
+  "density_295_template",
+  "density_295c_method",
+  "density_295c",
+  "density_295c_html",
+  "density_1560c_astm_d4052astm_d1298_section",
+  "density_1560_template",
+  "density_1560_method",
+  "density_1560c",
+  "density_1560c_html",
+  "density_1550c_astm_d4052astm_d1298_section",
+  "density_1550c_template",
+  "density_1550c_method",
+  "density_1550c",
+  "density_1550c_html",
+  "tan_and_tbn_tab",
+  "total_base_number_astm_d2896_b_section",
+  "tbn_template",
+  "tbn",
+  "tbn_html",
+  "total_acid_number_astm_d974_section",
+  "tan_template",
+  "tan",
+  "tan_html",
+  "total_acid_number_astm_d664_section",
+  "tan_astm_d664",
+  "tan_664_html",
+  "foaming_tab",
+  "foaming_astm_d892_section",
+  "foaming_template",
+  "thermometer_id_foaming",
+  "foaming",
+  "foaming_html",
+  "foaming_astm_d1881_section",
+  "foaming_2_template",
+  "thermometer_id_foaming_astm_d1881",
+  "foaming_table",
+  "second_foaming_html",
+  "demulsibility_tab",
+  "demulsibility_astm_d1401_section",
+  "demul_template",
+  "thermometer_id_demulsibility",
+  "test_temperature",
+  "demulsibility",
+  "demuls_html",
+  "pour_pointflash_point_tab",
+  "pour_point_astm_d97_section",
+  "pour_point_template",
+  "thermometer_id_pour_point",
+  "pour_point",
+  "pp_html",
+  "flash_point_astm_d92_section",
+  "flash_point_template",
+  "thermometer_id_flash_point",
+  "flash_point_d92",
+  "fp_d92_html",
+  "flash_point_astm_d93_nearest_05c_section",
+  "fp_template",
+  "thermometer_id_fp",
+  "flash_point_d93",
+  "fp_d93_html",
+  "cloud_point_astm_d2500_section",
+  "thermometer_id",
+  "column_break_psgn",
+  "cloud_point",
+  "cloud_point_html",
+  "air_release_tab",
+  "air_release_astm_d3427_section",
+  "air_release_template",
+  "test_temp",
+  "thermometer_id_ar",
+  "air_release",
+  "ar_html",
+  "elemental_analysis_in_percentage_mass_tab",
+  "elemental_analysis_in_percentage_mass_astm_d495_section",
+  "elemental_template",
+  "elemental_analysis",
+  "elemental_html",
+  "elemental_analysis_in_percentage_mass_astm_d5185_section",
+  "other_elemental",
+  "elemental_astm_d5185",
+  "elemental_astm_d5185_html",
+  "cold_cranking_simulator__astm_d5293_section",
+  "ccs_template",
+  "cold_cranking_simulator",
+  "ccs_html",
+  "table_section",
+  "other_test_template",
+  "tests",
+  "other_html",
+  "rust_prevention_astm_d665_section",
+  "rust_preventive_astm_d665b",
+  "rust_prevention_html",
+  "ftir_comparison_with_std_section",
+  "select_hbci",
+  "ftir_html",
+  "mrv_viscosity_astm_d4684_section",
+  "mrv_template",
+  "mrv_viscosity",
+  "mrv_html",
+  "rpvot_tab",
+  "rpvot_astm_d2272_section",
+  "start_time",
+  "end_time",
+  "rpvot",
+  "rpvot_html",
+  "filterability_factor_tab",
+  "filterability_factor_iso_13357_section",
+  "filterability_template",
+  "filterability_factor",
+  "filterability_html",
+  "section_break_jfuw",
+  "table_template_name",
+  "table",
+  "second_filterability_html",
+  "ph_erbp_moisture_content_tab",
+  "ph",
+  "ph_template",
+  "ph_and_erbp",
+  "ph_html",
+  "section_break_jrci",
+  "erbp_template",
+  "erbp",
+  "erbp_html",
+  "moisture_content_astm_d1123_section",
+  "mc_template",
+  "moisture_content",
+  "mc_html",
+  "sulphated_ash_astm_d874_section",
+  "sulphated_ash__wt_astm_d874",
+  "sulphates_ash_html",
+  "column_break_hmce",
+  "ash_astm_d482",
+  "ash_html",
+  "coolant_section",
+  "total_dissolve_solid__iso_3696",
+  "total_dissolve_html",
+  "column_break_xprw",
+  "conductivity_25c_iso_3696",
+  "conductivity_html",
+  "refractive_index_tab",
+  "refract_index",
+  "refractive_index",
+  "refractive_index_html",
+  "refractive_index_20c_astm_d1747_section",
+  "refractive_index_20c",
+  "refractive_index20_html",
+  "reserved_alkalinity_tab",
+  "reserved_alkalinity__astm_d1121_one_decimal_section",
+  "ra_template",
+  "reserved_alkalinity",
+  "ra_html",
+  "reserved_alkalinity_10_ml_astm_d1121_one_decimal_section",
+  "ra_10_template",
+  "reserved_alkalinity_10ml",
+  "ra_10ml_html",
+  "reserved_alkalinity_10_gm_astm_d1121_one_decimal_section",
+  "ra_10gm_template",
+  "reserved_alkalinity_10mg",
+  "ra_10gm_html",
+  "aniline_point_carbon_content_distillation_tab",
+  "aniline_point_astm_d611_section",
+  "thermometer_id_ap",
+  "aniline_point",
+  "aniline_html",
+  "carbon_content_ftir_section",
+  "cc_template",
+  "carbon_content",
+  "carbon_html",
+  "distillation_astm_d86_section",
+  "distillation_template",
+  "distillation",
+  "distillation_html",
+  "dewatering_property_with_dm_water_ihtp_q13_section",
+  "data_riba",
+  "dewatering_html",
+  "dewatering_property_with_3_nacl_solution_ihtp_q13_section",
+  "data_kkzn",
+  "dewatering3_html",
+  "boiling_point_suspended_water_solubility_tab",
+  "boiling_point_astm_d1120_section",
+  "bp_template",
+  "boiling_point",
+  "bp_html",
+  "section_break_nqnd",
+  "solubility_in_water_inhouse",
+  "solubility_html",
+  "column_break_olqu",
+  "suspended_matter_visual",
+  "suspended_matter_html",
+  "freezing_point_tab",
+  "freezing_point_astm_d3321astm_d1177_section",
+  "freezing_point_method",
+  "column_break_mvby",
+  "freezing_point",
+  "freezing_point_html",
+  "freezing_point_50_dil_astm_d3321astm_d1177_section",
+  "freezing_point_50_dil_method",
+  "column_break_gcex",
+  "freezing_point_50_dil",
+  "freezing50_html",
+  "freezing_point_33_dil_astm_d3321astm_d1177_section",
+  "freezing_point_33_dil_method",
+  "column_break_udmo",
+  "freezing_point_33_dil",
+  "freezing33_html",
+  "chloride_content_astm_d3634_section",
+  "chloride_content_template",
+  "chloride_content",
+  "cc_html",
+  "other_tab",
+  "other_1_section",
+  "other_test_1",
+  "other_2_section",
+  "other_test_2"
+ ],
+ "fields": [
+  {
+   "fetch_from": "sample_registration_no.name_of_sample",
+   "fieldname": "sample_name",
+   "fieldtype": "Link",
+   "label": "Sample Name",
+   "length": 30,
+   "options": "Item"
+  },
+  {
+   "fetch_from": "sample_registration_no.date_of_sample__receipt",
+   "fieldname": "date_and_time_of_sample_receipt",
+   "fieldtype": "Datetime",
+   "label": "Date and Time of Sample Receipt"
+  },
+  {
+   "fieldname": "batch_sizepack_size",
+   "fieldtype": "Data",
+   "label": "Batch size/Pack Size",
+   "length": 10
+  },
+  {
+   "depends_on": "eval: !(\r\n    (doc.customer_name == \"Valvoline Cummins (I) Pvt. Ltd.  (coolant)\") ||\r\n    (doc.customer_name == \"Exxon Mobil\" && [\"Receipt \u2013 Additive\", \"Blending- Premix\"].includes(doc.type_of_sample)) ||\r\n    (doc.customer_name == \"G S Caltex\" && doc.type_of_sample == \"Receipt \u2013 Additive\") ||\r\n    (doc.customer_name == \"Shell India Marketing Pvt. Ltd.\" && doc.type_of_sample == \"Receipt \u2013 Additive\")\r\n)",
+   "fieldname": "colour_astm_d1500",
+   "fieldtype": "Link",
+   "label": "Colour (ASTM D1500)",
+   "length": 10,
+   "options": "Colour"
+  },
+  {
+   "fieldname": "colour_visual",
+   "fieldtype": "Data",
+   "label": "Colour (Visual)",
+   "length": 10
+  },
+  {
+   "fieldname": "column_break_qxkv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_registration_no",
+   "fieldtype": "Link",
+   "label": "Sample Registration No.",
+   "length": 40,
+   "options": "Sample Registration"
+  },
+  {
+   "fetch_from": "sample_registration_no.tanker_no_vehicle_nobk_no__tank_nofilling_line_no",
+   "fieldname": "tankervehiclebktankfilling_line_no",
+   "fieldtype": "Data",
+   "label": "Tanker/Vehicle/BK/Tank/Filling Line No."
+  },
+  {
+   "fetch_from": "sample_registration_no.batch_no",
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch No.",
+   "length": 10
+  },
+  {
+   "fieldname": "tested_by",
+   "fieldtype": "Link",
+   "label": "Tested By",
+   "options": "Chemist Users"
+  },
+  {
+   "fieldname": "sample_parameters",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sample Parameters",
+   "length": 10,
+   "options": "Sample Parameters"
+  },
+  {
+   "fieldname": "viscosity_tab",
+   "fieldtype": "Tab Break",
+   "label": "Viscosity"
+  },
+  {
+   "fieldname": "kinematic_viscosity_100c_astm_d445_section",
+   "fieldtype": "Section Break",
+   "label": "Kinematic Viscosity@ 100\u00b0C (ASTM D445)"
+  },
+  {
+   "fieldname": "kinematic_viscosity_100c",
+   "fieldtype": "Table",
+   "label": "Kinematic Viscosity @100\u00b0C",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "default": "KV 100 Table",
+   "fieldname": "table_template",
+   "fieldtype": "Link",
+   "label": "Table Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "viscometer_id_kv_100c",
+   "fieldtype": "Link",
+   "label": "Viscometer ID KV@ 100\u00b0C",
+   "options": "Viscometer 100C"
+  },
+  {
+   "fieldname": "thermometer_id_kv_100c",
+   "fieldtype": "Link",
+   "label": "Thermometer ID KV@ 100\u00b0C",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "kinematic_viscosity_40c_astm_d445_section",
+   "fieldtype": "Section Break",
+   "label": "Kinematic Viscosity@ 40\u00b0C (ASTM D445)"
+  },
+  {
+   "default": "KV 40 Table",
+   "fieldname": "kv_40_table_template",
+   "fieldtype": "Link",
+   "label": "KV 40 Table Template",
+   "length": 20,
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "viscometer_id_kv_40c",
+   "fieldtype": "Link",
+   "label": "Viscometer ID KV@ 40\u00b0C",
+   "options": "Viscometer 40C"
+  },
+  {
+   "fieldname": "thermometer_id_kv_40c",
+   "fieldtype": "Link",
+   "label": "Thermometer ID KV@ 40\u00b0C",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "kinematic_viscosity_40c",
+   "fieldtype": "Table",
+   "label": "Kinematic Viscosity @40\u00b0C",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "depends_on": "eval: (doc.customer_name == \"Castrol (I) Pvt. Ltd.\" && [\"Bulk Filling Tanker OUT- Blending\", \"Storage Tank flushing\", \"First Filled Sample\", \"Filling Line Lunch Break Sample\", \"Filling Line Tea Break Sample\", \"Filling Line End Sample\", \"Filling Line Break Sample\"].includes(doc.type_of_sample))",
+   "fieldname": "container_sr_no",
+   "fieldtype": "Data",
+   "label": "Container Sr. No.",
+   "length": 20
+  },
+  {
+   "fieldname": "section_break_zifa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pass_or_fail",
+   "fieldtype": "Data",
+   "label": "Pass or Fail",
+   "length": 10
+  },
+  {
+   "fieldname": "remark_if_any",
+   "fieldtype": "Small Text",
+   "label": "Remark if any"
+  },
+  {
+   "fieldname": "date_of_filling",
+   "fieldtype": "Data",
+   "label": "Date of Filling",
+   "length": 10
+  },
+  {
+   "fieldname": "date_of_mfg",
+   "fieldtype": "Data",
+   "label": "Date of MFG",
+   "length": 10
+  },
+  {
+   "fieldname": "column_break_sdim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_analysis_completed",
+   "fieldtype": "Datetime",
+   "label": "Date of Analysis Completed"
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Data",
+   "label": "Verified By",
+   "length": 10
+  },
+  {
+   "fieldname": "sku_code",
+   "fieldtype": "Data",
+   "label": "SKU Code",
+   "length": 10
+  },
+  {
+   "fieldname": "filled_date",
+   "fieldtype": "Data",
+   "label": "Filled Date",
+   "length": 10
+  },
+  {
+   "fieldname": "date_of_expiry",
+   "fieldtype": "Data",
+   "label": "Date of Expiry",
+   "length": 10
+  },
+  {
+   "default": "ISO Table",
+   "fieldname": "iso_tab",
+   "fieldtype": "Tab Break",
+   "label": "ISO"
+  },
+  {
+   "default": "ISO Table",
+   "fieldname": "iso_template_name",
+   "fieldtype": "Link",
+   "label": "ISO Template Name",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "iso_4406__nas_1638_section",
+   "fieldtype": "Section Break",
+   "label": "ISO 4406 / NAS 1638"
+  },
+  {
+   "fieldname": "iso_and_nas",
+   "fieldtype": "Table",
+   "label": "ISO and NAS",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "kinematic_viscosity_astm_d7042_section",
+   "fieldtype": "Section Break",
+   "label": "Kinematic Viscosity (ASTM D7042)"
+  },
+  {
+   "default": "KV Table",
+   "fieldname": "kv_template",
+   "fieldtype": "Link",
+   "label": "KV Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "kinematic_viscosity",
+   "fieldtype": "Table",
+   "label": "Kinematic Viscosity",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "brookfield_viscosity_astm_d2983_section",
+   "fieldtype": "Section Break",
+   "label": "Brookfield Viscosity (ASTM D2983)"
+  },
+  {
+   "default": "Brookfield Table",
+   "fieldname": "brookfield_template",
+   "fieldtype": "Link",
+   "label": "Brookfield Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "test_temprature",
+   "fieldtype": "Select",
+   "label": "Test Temprature",
+   "length": 10,
+   "options": "\n54\u00b0C\n82\u00b0C"
+  },
+  {
+   "fieldname": "brookfield_viscosity",
+   "fieldtype": "Table",
+   "label": "Brookfield Viscosity",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "kv_minus40c_section",
+   "fieldtype": "Section Break",
+   "label": "KV@-40\u00b0C"
+  },
+  {
+   "description": "Cst",
+   "fieldname": "kv_minus40c_in_cst_iso_3104",
+   "fieldtype": "Data",
+   "label": "KV@-40\u00b0C in Cst  (ISO 3104)",
+   "length": 10
+  },
+  {
+   "fieldname": "viscosity_100_deg_c_astm_d6278_section",
+   "fieldtype": "Section Break",
+   "label": "Viscosity @ 100 Deg C (ASTM D6278)"
+  },
+  {
+   "description": "Cst",
+   "fieldname": "viscosity_100_deg_c_astm_d6278",
+   "fieldtype": "Data",
+   "label": "Viscosity @ 100 Deg C (After 120 shear cycles)",
+   "length": 10
+  },
+  {
+   "default": "Density Table",
+   "fieldname": "density_tab",
+   "fieldtype": "Tab Break",
+   "label": "Density"
+  },
+  {
+   "fieldname": "density__150c_astm_d4052astm_d1298_section",
+   "fieldtype": "Section Break",
+   "label": "Density @ 15.0\u02daC (ASTM D4052/ASTM D1298)"
+  },
+  {
+   "default": "Density 15C Table",
+   "fieldname": "density_15_template",
+   "fieldtype": "Link",
+   "label": "Density 15 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "method",
+   "fieldtype": "Select",
+   "label": "Method",
+   "length": 12,
+   "options": "\nASTM D4052\nASTM D1298"
+  },
+  {
+   "fieldname": "density_15c",
+   "fieldtype": "Table",
+   "label": "Density @ 15\u02daC",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "density__200c_astm_d4052astm_d1298_section",
+   "fieldtype": "Section Break",
+   "label": "Density @ 20.0\u02daC (ASTM D4052/ASTM D1298)"
+  },
+  {
+   "default": "Density 20C Table",
+   "fieldname": "density_20_template",
+   "fieldtype": "Link",
+   "label": "Density 20 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "density_20c_method",
+   "fieldtype": "Select",
+   "label": "Density @ 20\u02daC  Method",
+   "length": 10,
+   "options": "\nASTM D4052\nASTM D1298"
+  },
+  {
+   "fieldname": "density_20c",
+   "fieldtype": "Table",
+   "label": "Density @ 20\u02daC ",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "density_295c_tab_section",
+   "fieldtype": "Section Break",
+   "label": "Density@ 29.5\u00b0C"
+  },
+  {
+   "default": "Density 29.5C Table",
+   "fieldname": "density_295_template",
+   "fieldtype": "Link",
+   "label": "Density 29.5 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "density_295c_method",
+   "fieldtype": "Select",
+   "label": "Density @29.5\u02daC  Method",
+   "length": 10,
+   "options": "\nASTM D4052\nASTM D1298"
+  },
+  {
+   "fieldname": "density_295c",
+   "fieldtype": "Table",
+   "label": "Density @ 29.5\u02daC ",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "tan_and_tbn_tab",
+   "fieldtype": "Tab Break",
+   "label": "TAN and TBN"
+  },
+  {
+   "fieldname": "total_base_number_astm_d2896_b_section",
+   "fieldtype": "Section Break",
+   "label": "Total Base Number (ASTM D2896 B)"
+  },
+  {
+   "default": "TBN Table",
+   "fieldname": "tbn_template",
+   "fieldtype": "Link",
+   "label": "TBN Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "tbn",
+   "fieldtype": "Table",
+   "label": "TBN",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "total_acid_number_astm_d974_section",
+   "fieldtype": "Section Break",
+   "label": "Total Acid Number (ASTM D974)"
+  },
+  {
+   "default": "TAN Table",
+   "fieldname": "tan_template",
+   "fieldtype": "Link",
+   "label": "TAN Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "tan",
+   "fieldtype": "Table",
+   "label": "TAN",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "foaming_tab",
+   "fieldtype": "Tab Break",
+   "label": "Foaming"
+  },
+  {
+   "fieldname": "foaming_astm_d892_section",
+   "fieldtype": "Section Break",
+   "label": "Foaming (ASTM D892)"
+  },
+  {
+   "fieldname": "thermometer_id_foaming",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (Foaming)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "demulsibility_tab",
+   "fieldtype": "Tab Break",
+   "label": "Demulsibility"
+  },
+  {
+   "fieldname": "demulsibility_astm_d1401_section",
+   "fieldtype": "Section Break",
+   "label": "Demulsibility (ASTM D1401)"
+  },
+  {
+   "default": "Demulsibility Table",
+   "fieldname": "demul_template",
+   "fieldtype": "Link",
+   "label": "Demul Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "thermometer_id_demulsibility",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (Demulsibility)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "test_temperature",
+   "fieldtype": "Select",
+   "label": "Test Temperature",
+   "length": 10,
+   "options": "\n54\u00b0C\n82\u00b0C"
+  },
+  {
+   "fieldname": "demulsibility",
+   "fieldtype": "Table",
+   "label": "Demulsibility",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "pour_pointflash_point_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pour Point/Flash Point/Cloud Point"
+  },
+  {
+   "fieldname": "pour_point_astm_d97_section",
+   "fieldtype": "Section Break",
+   "label": "Pour Point (ASTM D97)"
+  },
+  {
+   "default": "Pour Point Table",
+   "fieldname": "pour_point_template",
+   "fieldtype": "Link",
+   "label": "Pour Point Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "thermometer_id_pour_point",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (Pour Point)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "pour_point",
+   "fieldtype": "Table",
+   "label": "Pour Point",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "flash_point_astm_d92_section",
+   "fieldtype": "Section Break",
+   "label": "Flash Point (ASTM D92)"
+  },
+  {
+   "default": "Flash Point Table",
+   "fieldname": "flash_point_template",
+   "fieldtype": "Link",
+   "label": "Flash Point Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "thermometer_id_flash_point",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (Flash Point)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "flash_point_d92",
+   "fieldtype": "Table",
+   "label": "Flash Point D92",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "flash_point_astm_d93_nearest_05c_section",
+   "fieldtype": "Section Break",
+   "label": "Flash Point (ASTM D93) (Nearest 0.5C)"
+  },
+  {
+   "default": "FP Table",
+   "fieldname": "fp_template",
+   "fieldtype": "Link",
+   "label": "FP Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "thermometer_id_fp",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (FP)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "flash_point_d93",
+   "fieldtype": "Table",
+   "label": "Flash Point D93",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "air_release_tab",
+   "fieldtype": "Tab Break",
+   "label": "Air Release"
+  },
+  {
+   "fieldname": "air_release_astm_d3427_section",
+   "fieldtype": "Section Break",
+   "label": "Air Release (ASTM D3427)"
+  },
+  {
+   "default": "Air Release Table",
+   "fieldname": "air_release_template",
+   "fieldtype": "Link",
+   "label": "Air Release Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "test_temp",
+   "fieldtype": "Select",
+   "label": "Test Temp",
+   "length": 10,
+   "options": "\n54\u00b0C\n82\u00b0C"
+  },
+  {
+   "fieldname": "thermometer_id_ar",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (AR)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "air_release",
+   "fieldtype": "Table",
+   "label": "Air Release",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "elemental_analysis_in_percentage_mass_tab",
+   "fieldtype": "Tab Break",
+   "label": "Elemental Analysis in percentage mass"
+  },
+  {
+   "fieldname": "elemental_analysis_in_percentage_mass_astm_d495_section",
+   "fieldtype": "Section Break",
+   "label": "Elemental Analysis in percentage mass (ASTM D495)"
+  },
+  {
+   "default": "Elemental Table",
+   "fieldname": "elemental_template",
+   "fieldtype": "Link",
+   "label": "Elemental Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "elemental_analysis",
+   "fieldtype": "Table",
+   "label": "Elemental Analysis",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "cold_cranking_simulator__astm_d5293_section",
+   "fieldtype": "Section Break",
+   "label": "Cold Cranking Simulator @ (ASTM D5293)"
+  },
+  {
+   "default": "CCS Table",
+   "fieldname": "ccs_template",
+   "fieldtype": "Link",
+   "label": "CCS Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "cold_cranking_simulator",
+   "fieldtype": "Table",
+   "label": "Cold Cranking Simulator",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "default": "Foaming Table",
+   "fieldname": "foaming_template",
+   "fieldtype": "Link",
+   "label": "Foaming Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "foaming",
+   "fieldtype": "Table",
+   "label": "Foaming",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "table_section",
+   "fieldtype": "Section Break",
+   "label": "Table"
+  },
+  {
+   "default": "Elemental Other Test Table",
+   "fieldname": "other_test_template",
+   "fieldtype": "Link",
+   "label": "Other Test Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "tests",
+   "fieldtype": "Table",
+   "label": "Tests",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "rpvot_tab",
+   "fieldtype": "Tab Break",
+   "label": "RPVOT"
+  },
+  {
+   "fieldname": "rpvot_astm_d2272_section",
+   "fieldtype": "Section Break",
+   "label": "RPVOT (ASTM D2272)"
+  },
+  {
+   "fieldname": "rpvot",
+   "fieldtype": "Data",
+   "label": "RPVOT",
+   "length": 15
+  },
+  {
+   "fieldname": "filterability_factor_tab",
+   "fieldtype": "Tab Break",
+   "label": "Filterability Factor/ Phenolic Inhibitor/ Nitrogen"
+  },
+  {
+   "fieldname": "filterability_factor_iso_13357_section",
+   "fieldtype": "Section Break",
+   "label": "Filterability Factor (ISO 13357)"
+  },
+  {
+   "default": "Filterability Table",
+   "fieldname": "filterability_template",
+   "fieldtype": "Link",
+   "label": "Filterability Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "filterability_factor",
+   "fieldtype": "Table",
+   "label": "Filterability Factor",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "ph_erbp_moisture_content_tab",
+   "fieldtype": "Tab Break",
+   "label": "PH/ ERBP/ Moisture Content"
+  },
+  {
+   "default": "PH ERBP Table",
+   "fieldname": "ph_template",
+   "fieldtype": "Link",
+   "label": "PH Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "ph_and_erbp",
+   "fieldtype": "Table",
+   "label": "PH",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "moisture_content_astm_d1123_section",
+   "fieldtype": "Section Break",
+   "label": "Water Content Karl Fischer (volumetric)(ASTM D1123)"
+  },
+  {
+   "default": "Moisture Content Table",
+   "fieldname": "mc_template",
+   "fieldtype": "Link",
+   "label": "MC Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "moisture_content",
+   "fieldtype": "Table",
+   "label": "Moisture Content",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "refractive_index_tab",
+   "fieldtype": "Tab Break",
+   "label": "Refractive Index"
+  },
+  {
+   "fieldname": "refractive_index",
+   "fieldtype": "Data",
+   "label": "Refractive Index",
+   "length": 12
+  },
+  {
+   "fieldname": "reserved_alkalinity_tab",
+   "fieldtype": "Tab Break",
+   "label": "Reserved Alkalinity"
+  },
+  {
+   "fieldname": "reserved_alkalinity__astm_d1121_one_decimal_section",
+   "fieldtype": "Section Break",
+   "label": "Reserved Alkalinity  (ASTM D1121) (One Decimal)"
+  },
+  {
+   "default": "RA Table",
+   "fieldname": "ra_template",
+   "fieldtype": "Link",
+   "label": "RA Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "reserved_alkalinity",
+   "fieldtype": "Table",
+   "label": "Reserved Alkalinity",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "other_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other"
+  },
+  {
+   "fieldname": "other_1_section",
+   "fieldtype": "Section Break",
+   "label": "Other 1"
+  },
+  {
+   "fieldname": "other_test_1",
+   "fieldtype": "Table",
+   "label": "Other Test 1",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "other_2_section",
+   "fieldtype": "Section Break",
+   "label": "Other 2"
+  },
+  {
+   "fieldname": "other_test_2",
+   "fieldtype": "Table",
+   "label": "Other Test 2",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "depends_on": "eval: (\r\n    (doc.customer_name == \"Exxon Mobil\" && [\"Receipt - Base oil\", \"Bulk Filling Tanker OUT- Blending\", \"First Filled sample\"].includes(doc.type_of_sample)) ||\r\n    (doc.customer_name == \"Castrol (I) Pvt. Ltd.\" && doc.type_of_sample == \"Receipt \u2013 Additive\")\r\n)\r\n&& !(\r\n    [\"Valvoline Cummins (I) Pvt. Ltd.  (coolant)\", \"Valvoline Cummins (I) Pvt. Ltd.  (Lube oil)\", \"G S Caltex\", \"Shell India Marketing Pvt. Ltd.\"].includes(doc.customer_name)\r\n)",
+   "fieldname": "odour",
+   "fieldtype": "Select",
+   "label": "Odour",
+   "length": 25,
+   "options": "\nPass\nFail\nObjectionable\nNon Objectionable"
+  },
+  {
+   "fieldname": "aniline_point_carbon_content_distillation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Aniline Point/ Carbon Content/ Distillation"
+  },
+  {
+   "fieldname": "aniline_point_astm_d611_section",
+   "fieldtype": "Section Break",
+   "label": "Aniline Point (ASTM D611)"
+  },
+  {
+   "fieldname": "thermometer_id_ap",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (AP)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "aniline_point",
+   "fieldtype": "Data",
+   "label": "Aniline Point",
+   "length": 15
+  },
+  {
+   "fieldname": "carbon_content_ftir_section",
+   "fieldtype": "Section Break",
+   "label": "Carbon Content (FTIR)"
+  },
+  {
+   "default": "Carbon Content Table",
+   "fieldname": "cc_template",
+   "fieldtype": "Link",
+   "label": "CC Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "carbon_content",
+   "fieldtype": "Table",
+   "label": "Carbon Content",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "distillation_astm_d86_section",
+   "fieldtype": "Section Break",
+   "label": "Distillation (ASTM D86)"
+  },
+  {
+   "default": "Distillation Table",
+   "fieldname": "distillation_template",
+   "fieldtype": "Link",
+   "label": "Distillation Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "distillation",
+   "fieldtype": "Table",
+   "label": "Distillation",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "kv378c_section",
+   "fieldtype": "Section Break",
+   "label": "KV37.8C"
+  },
+  {
+   "default": "KV 37.8 Table",
+   "fieldname": "kv_378_template",
+   "fieldtype": "Link",
+   "label": "KV 37.8 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "viscometer_id_kv_378c",
+   "fieldtype": "Link",
+   "label": "Viscometer ID (KV 37.8C)",
+   "options": "Viscometer 100C"
+  },
+  {
+   "fieldname": "viscosity_index_astm_d2270_section",
+   "fieldtype": "Section Break",
+   "label": "Viscosity Index (ASTM D2270)"
+  },
+  {
+   "fieldname": "viscosity_index",
+   "fieldtype": "Data",
+   "label": "Viscosity Index",
+   "length": 20
+  },
+  {
+   "fieldname": "rust_prevention_astm_d665_section",
+   "fieldtype": "Section Break",
+   "label": "Rust Prevention (ASTM D665)"
+  },
+  {
+   "fieldname": "ftir_comparison_with_std_section",
+   "fieldtype": "Section Break",
+   "label": "FTIR Comparison with STD"
+  },
+  {
+   "fieldname": "select_hbci",
+   "fieldtype": "Select",
+   "label": "FTIR",
+   "options": "\nPass\nFail"
+  },
+  {
+   "fieldname": "mrv_viscosity_astm_d4684_section",
+   "fieldtype": "Section Break",
+   "label": " MRV Viscosity (ASTM D4684)"
+  },
+  {
+   "default": "MRV Table",
+   "fieldname": "mrv_template",
+   "fieldtype": "Link",
+   "label": "MRV Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "mrv_viscosity",
+   "fieldtype": "Table",
+   "label": "MRV Viscosity",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "dewatering_property_with_dm_water_ihtp_q13_section",
+   "fieldtype": "Section Break",
+   "label": "Dewatering Property with DM Water (IHTP Q13)"
+  },
+  {
+   "description": "Minutes",
+   "fieldname": "data_riba",
+   "fieldtype": "Data",
+   "length": 10
+  },
+  {
+   "fieldname": "dewatering_property_with_3_nacl_solution_ihtp_q13_section",
+   "fieldtype": "Section Break",
+   "label": "Dewatering Property with 3% Nacl Solution (IHTP Q13)"
+  },
+  {
+   "description": "Minuets",
+   "fieldname": "data_kkzn",
+   "fieldtype": "Data",
+   "length": 10
+  },
+  {
+   "fieldname": "thermometer_id_kv_378c",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (KV 37.8C)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "kinematic_viscosity_378c",
+   "fieldtype": "Table",
+   "label": "Kinematic Viscosity 37.8C",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "density_1560c_astm_d4052astm_d1298_section",
+   "fieldtype": "Section Break",
+   "label": "Density 15.60C (ASTM D4052/ASTM D1298)"
+  },
+  {
+   "default": "Density 15.60C Table",
+   "fieldname": "density_1560_template",
+   "fieldtype": "Link",
+   "label": "Density 15.60 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "density_1560_method",
+   "fieldtype": "Select",
+   "label": "Density 15.60 Method",
+   "length": 12,
+   "options": "\nASTM D4052\nASTM D1298"
+  },
+  {
+   "default": "Density Table",
+   "fieldname": "density_1560c",
+   "fieldtype": "Table",
+   "label": "Density 15.60C",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "density_1550c_astm_d4052astm_d1298_section",
+   "fieldtype": "Section Break",
+   "label": "Density @ 15.50\u02daC (ASTM D4052/ASTM D1298)"
+  },
+  {
+   "fieldname": "density_1550c_method",
+   "fieldtype": "Select",
+   "label": "Density @ 15.50\u02daC Method",
+   "length": 12,
+   "options": "\nASTM D4052\nASTM D1298"
+  },
+  {
+   "default": "Density 15.50C Table",
+   "fieldname": "density_1550c_template",
+   "fieldtype": "Link",
+   "label": "Density @ 15.50\u02daC Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "density_1550c",
+   "fieldtype": "Table",
+   "label": "Density @ 15.5\u02da0C",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "section_break_jrci",
+   "fieldtype": "Section Break",
+   "label": "ERBP"
+  },
+  {
+   "default": "ERBP Table",
+   "fieldname": "erbp_template",
+   "fieldtype": "Link",
+   "label": "ERBP Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "erbp",
+   "fieldtype": "Table",
+   "label": "ERBP",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "boiling_point_suspended_water_solubility_tab",
+   "fieldtype": "Tab Break",
+   "label": "Boiling Point/ Suspended Water/ Solubility"
+  },
+  {
+   "fieldname": "boiling_point_astm_d1120_section",
+   "fieldtype": "Section Break",
+   "label": "Boiling Point (ASTM D1120)"
+  },
+  {
+   "default": "Boiling Point Table",
+   "fieldname": "bp_template",
+   "fieldtype": "Link",
+   "label": "BP Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "boiling_point",
+   "fieldtype": "Table",
+   "label": "Boiling Point",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "section_break_nqnd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "solubility_in_water_inhouse",
+   "fieldtype": "Select",
+   "label": "Solubility in Water (Inhouse)",
+   "length": 12,
+   "options": "\nSoluble\nInsoluble"
+  },
+  {
+   "fieldname": "column_break_olqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "suspended_matter_visual",
+   "fieldtype": "Select",
+   "label": "Suspended Matter (Visual)",
+   "length": 10,
+   "options": "\nNone\nYes"
+  },
+  {
+   "fieldname": "refractive_index_20c_astm_d1747_section",
+   "fieldtype": "Section Break",
+   "label": "Refractive Index @ 20\u00b0C (ASTM D1747)"
+  },
+  {
+   "description": "%wt",
+   "fieldname": "refractive_index_20c",
+   "fieldtype": "Data",
+   "label": "Refractive Index 20C",
+   "length": 12
+  },
+  {
+   "fieldname": "reserved_alkalinity_10_ml_astm_d1121_one_decimal_section",
+   "fieldtype": "Section Break",
+   "label": "Reserved Alkalinity 10 ml (ASTM D1121) (One Decimal)"
+  },
+  {
+   "default": "RA 10ml Table",
+   "fieldname": "ra_10_template",
+   "fieldtype": "Link",
+   "label": "RA 10 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "reserved_alkalinity_10ml",
+   "fieldtype": "Table",
+   "label": "Reserved Alkalinity 10ml",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "reserved_alkalinity_10_gm_astm_d1121_one_decimal_section",
+   "fieldtype": "Section Break",
+   "label": "Reserved Alkalinity 10 gm (ASTM D1121) (One Decimal)"
+  },
+  {
+   "default": "RA 10gm Table",
+   "fieldname": "ra_10gm_template",
+   "fieldtype": "Link",
+   "label": "RA 10gm Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "reserved_alkalinity_10mg",
+   "fieldtype": "Table",
+   "label": "Reserved Alkalinity 10mg",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "foaming_astm_d1881_section",
+   "fieldtype": "Section Break",
+   "label": "Foaming (ASTM D1881)"
+  },
+  {
+   "default": "Second Foaming Table",
+   "fieldname": "foaming_2_template",
+   "fieldtype": "Link",
+   "label": "Foaming 2 Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "thermometer_id_foaming_astm_d1881",
+   "fieldtype": "Link",
+   "label": "Thermometer ID (Foaming ASTM D1881)",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "foaming_table",
+   "fieldtype": "Table",
+   "label": "Foaming Table",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "freezing_point_tab",
+   "fieldtype": "Tab Break",
+   "label": "Freezing Point/ Chloride Content"
+  },
+  {
+   "fieldname": "freezing_point_astm_d3321astm_d1177_section",
+   "fieldtype": "Section Break",
+   "label": "Freezing Point (ASTM D3321/ASTM D1177)",
+   "options": "\nASTM D3321\nASTM D1177"
+  },
+  {
+   "fieldname": "freezing_point_method",
+   "fieldtype": "Select",
+   "label": "Freezing Point Method",
+   "length": 12
+  },
+  {
+   "fieldname": "column_break_mvby",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u00b0C",
+   "fieldname": "freezing_point",
+   "fieldtype": "Data",
+   "label": "Freezing Point",
+   "length": 12
+  },
+  {
+   "fieldname": "freezing_point_50_dil_astm_d3321astm_d1177_section",
+   "fieldtype": "Section Break",
+   "label": " Freezing Point 50% Dil. (ASTM D3321/ASTM D1177)",
+   "options": "\nASTM D3321\nASTM D1177"
+  },
+  {
+   "fieldname": "freezing_point_50_dil_method",
+   "fieldtype": "Select",
+   "label": "Freezing Point 50% Dil. Method",
+   "length": 12
+  },
+  {
+   "description": "\u00b0C",
+   "fieldname": "column_break_gcex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freezing_point_50_dil",
+   "fieldtype": "Data",
+   "label": "Freezing Point 50% Dil."
+  },
+  {
+   "fieldname": "freezing_point_33_dil_astm_d3321astm_d1177_section",
+   "fieldtype": "Section Break",
+   "label": "Freezing Point 33% Dil. (ASTM D3321/ASTM D1177)"
+  },
+  {
+   "fieldname": "freezing_point_33_dil_method",
+   "fieldtype": "Select",
+   "label": "Freezing Point 33% Dil. Method",
+   "length": 12,
+   "options": "\nASTM D3321\nASTM D1177"
+  },
+  {
+   "fieldname": "column_break_udmo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u00b0C",
+   "fieldname": "freezing_point_33_dil",
+   "fieldtype": "Data",
+   "label": "Freezing Point 33% Dil.",
+   "length": 12
+  },
+  {
+   "fieldname": "chloride_content_astm_d3634_section",
+   "fieldtype": "Section Break",
+   "label": "Chloride Content (ASTM D3634)"
+  },
+  {
+   "default": "Chloride Content Table",
+   "fieldname": "chloride_content_template",
+   "fieldtype": "Link",
+   "label": "Chloride Content Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "chloride_content",
+   "fieldtype": "Table",
+   "label": "Chloride Content",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "section_break_jfuw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Second Filterability Table",
+   "fieldname": "table_template_name",
+   "fieldtype": "Link",
+   "label": "Table Template Name",
+   "length": 40,
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Table",
+   "label": "Table",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "sulphated_ash_astm_d874_section",
+   "fieldtype": "Section Break",
+   "label": "Sulphated Ash (ASTM D874) and Ash (ASTM D482)"
+  },
+  {
+   "fieldname": "kv_100c_html",
+   "fieldtype": "HTML",
+   "label": "KV 100C Html"
+  },
+  {
+   "fieldname": "total_acid_number_astm_d664_section",
+   "fieldtype": "Section Break",
+   "label": "Total Acid Number (ASTM D664)"
+  },
+  {
+   "description": "mg of KOH/gm",
+   "fieldname": "tan_astm_d664",
+   "fieldtype": "Data",
+   "label": "TAN (ASTM D664)",
+   "length": 20
+  },
+  {
+   "fieldname": "iso_html",
+   "fieldtype": "HTML",
+   "label": "ISO Html"
+  },
+  {
+   "fieldname": "kv_40_html",
+   "fieldtype": "HTML",
+   "label": "KV 40 Html"
+  },
+  {
+   "fieldname": "vi_html",
+   "fieldtype": "HTML",
+   "label": "VI Html"
+  },
+  {
+   "fieldname": "brookfield_html",
+   "fieldtype": "HTML",
+   "label": "Brookfield Html"
+  },
+  {
+   "fieldname": "kv_minus40_html",
+   "fieldtype": "HTML",
+   "label": "KV minus40 Html"
+  },
+  {
+   "fieldname": "kv_378_html",
+   "fieldtype": "HTML",
+   "label": "KV 37.8 Html"
+  },
+  {
+   "fieldname": "kv_html100",
+   "fieldtype": "HTML",
+   "label": "KV Html100"
+  },
+  {
+   "fieldname": "density_20c_html",
+   "fieldtype": "HTML",
+   "label": "Density 20C Html"
+  },
+  {
+   "fieldname": "density_295c_html",
+   "fieldtype": "HTML",
+   "label": "Density 29.5C Html"
+  },
+  {
+   "fieldname": "density_1560c_html",
+   "fieldtype": "HTML",
+   "label": "Density 15.60C Html"
+  },
+  {
+   "fieldname": "density_1550c_html",
+   "fieldtype": "HTML",
+   "label": "Density 15.50C Html"
+  },
+  {
+   "fieldname": "density_15c_html",
+   "fieldtype": "HTML",
+   "label": "Density 15C Html"
+  },
+  {
+   "fieldname": "tan_html",
+   "fieldtype": "HTML",
+   "label": "TAN Html"
+  },
+  {
+   "fieldname": "tbn_html",
+   "fieldtype": "HTML",
+   "label": "TBN Html"
+  },
+  {
+   "fieldname": "foaming_html",
+   "fieldtype": "HTML",
+   "label": "Foaming Html"
+  },
+  {
+   "fieldname": "second_foaming_html",
+   "fieldtype": "HTML",
+   "label": "Second Foaming Html"
+  },
+  {
+   "fieldname": "demuls_html",
+   "fieldtype": "HTML",
+   "label": "Demuls Html"
+  },
+  {
+   "fieldname": "pp_html",
+   "fieldtype": "HTML",
+   "label": "PP Html"
+  },
+  {
+   "fieldname": "fp_d92_html",
+   "fieldtype": "HTML",
+   "label": "FP D92 Html"
+  },
+  {
+   "fieldname": "fp_d93_html",
+   "fieldtype": "HTML",
+   "label": "FP D93 Html"
+  },
+  {
+   "fieldname": "ar_html",
+   "fieldtype": "HTML",
+   "label": "AR Html"
+  },
+  {
+   "fieldname": "elemental_html",
+   "fieldtype": "HTML",
+   "label": "Elemental Html"
+  },
+  {
+   "fieldname": "ccs_html",
+   "fieldtype": "HTML",
+   "label": "CCS Html"
+  },
+  {
+   "fieldname": "other_html",
+   "fieldtype": "HTML",
+   "label": "Other Html"
+  },
+  {
+   "fieldname": "mrv_html",
+   "fieldtype": "HTML",
+   "label": "MRV Html"
+  },
+  {
+   "fieldname": "filterability_html",
+   "fieldtype": "HTML",
+   "label": "Filterability Html"
+  },
+  {
+   "fieldname": "second_filterability_html",
+   "fieldtype": "HTML",
+   "label": "Second Filterability Html"
+  },
+  {
+   "fieldname": "ph_html",
+   "fieldtype": "HTML",
+   "label": "PH Html"
+  },
+  {
+   "fieldname": "erbp_html",
+   "fieldtype": "HTML",
+   "label": "ERBP Html"
+  },
+  {
+   "fieldname": "mc_html",
+   "fieldtype": "HTML",
+   "label": "MC Html"
+  },
+  {
+   "fieldname": "bp_html",
+   "fieldtype": "HTML",
+   "label": "BP Html"
+  },
+  {
+   "fieldname": "cc_html",
+   "fieldtype": "HTML",
+   "label": "CC Html"
+  },
+  {
+   "fetch_from": "sample_registration_no.name_of_customer",
+   "fieldname": "name_of_customer",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Name of Customer"
+  },
+  {
+   "fetch_from": "sample_registration_no.type_of_sample",
+   "fieldname": "type_of_sample",
+   "fieldtype": "Data",
+   "label": "Type of Sample"
+  },
+  {
+   "fetch_from": "sample_registration_no.name_of_customer",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "length": 80
+  },
+  {
+   "fieldname": "appearance_visual",
+   "fieldtype": "Link",
+   "label": "Appearance",
+   "options": "Apperance"
+  },
+  {
+   "fieldname": "crackle",
+   "fieldtype": "Select",
+   "label": "Crackle Test",
+   "length": 10,
+   "options": "\nPositive\nNegative"
+  },
+  {
+   "description": "% wt",
+   "fieldname": "sulphated_ash__wt_astm_d874",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "rust_preventive_astm_d665b",
+   "fieldtype": "Select",
+   "label": "Rust Prevention",
+   "options": "\nPass\nFail"
+  },
+  {
+   "fieldname": "ph",
+   "fieldtype": "Section Break",
+   "label": "PH"
+  },
+  {
+   "fieldname": "refract_index",
+   "fieldtype": "Section Break",
+   "label": "Refractive Index"
+  },
+  {
+   "fieldname": "cloud_point_astm_d2500_section",
+   "fieldtype": "Section Break",
+   "label": "Cloud Point (ASTM D2500)"
+  },
+  {
+   "fieldname": "thermometer_id",
+   "fieldtype": "Link",
+   "label": "Thermometer ID",
+   "options": "Thermometers"
+  },
+  {
+   "fieldname": "column_break_psgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u00b0c",
+   "fieldname": "cloud_point",
+   "fieldtype": "Data",
+   "label": "Cloud Point",
+   "length": 10
+  },
+  {
+   "fieldname": "coolant_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "mg/L",
+   "fieldname": "total_dissolve_solid__iso_3696",
+   "fieldtype": "Data",
+   "label": "Total Dissolve Solid  (ISO 3696)",
+   "length": 10
+  },
+  {
+   "fieldname": "column_break_xprw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "\u00b5S/cm",
+   "fieldname": "conductivity_25c_iso_3696",
+   "fieldtype": "Data",
+   "label": "Conductivity @25C (ISO 3696)",
+   "length": 10
+  },
+  {
+   "fieldname": "apperance_html",
+   "fieldtype": "HTML",
+   "label": "Apperance HTML"
+  },
+  {
+   "fieldname": "colour_html",
+   "fieldtype": "HTML",
+   "label": "Colour HTML"
+  },
+  {
+   "fieldname": "colour_visual_html",
+   "fieldtype": "HTML",
+   "label": "Colour Visual HTML"
+  },
+  {
+   "fieldname": "crackle_html",
+   "fieldtype": "HTML",
+   "label": "Crackle HTML"
+  },
+  {
+   "fieldname": "sr_no_html",
+   "fieldtype": "HTML",
+   "label": "Sr No HTML"
+  },
+  {
+   "fieldname": "odour_html",
+   "fieldtype": "HTML",
+   "label": "Odour HTML"
+  },
+  {
+   "fieldname": "viscosity_html",
+   "fieldtype": "HTML",
+   "label": "Viscosity HTML"
+  },
+  {
+   "fieldname": "tan_664_html",
+   "fieldtype": "HTML",
+   "label": "TAN 664 HTML"
+  },
+  {
+   "fieldname": "cloud_point_html",
+   "fieldtype": "HTML",
+   "label": "Cloud Point HTML"
+  },
+  {
+   "fieldname": "rust_prevention_html",
+   "fieldtype": "HTML",
+   "label": "Rust Prevention HTML"
+  },
+  {
+   "fieldname": "ftir_html",
+   "fieldtype": "HTML",
+   "label": "FTIR HTML"
+  },
+  {
+   "fieldname": "rpvot_html",
+   "fieldtype": "HTML",
+   "label": "RPVOT HTML"
+  },
+  {
+   "fieldname": "sulphates_ash_html",
+   "fieldtype": "HTML",
+   "label": "Sulphates Ash HTML"
+  },
+  {
+   "fieldname": "total_dissolve_html",
+   "fieldtype": "HTML",
+   "label": "Total Dissolve HTML"
+  },
+  {
+   "fieldname": "conductivity_html",
+   "fieldtype": "HTML",
+   "label": "Conductivity HTML"
+  },
+  {
+   "fieldname": "refractive_index_html",
+   "fieldtype": "HTML",
+   "label": "Refractive Index HTML"
+  },
+  {
+   "fieldname": "refractive_index20_html",
+   "fieldtype": "HTML",
+   "label": "Refractive Index20 HTML"
+  },
+  {
+   "fieldname": "ra_html",
+   "fieldtype": "HTML",
+   "label": "RA HTML"
+  },
+  {
+   "fieldname": "ra_10ml_html",
+   "fieldtype": "HTML",
+   "label": "RA 10ml HTML"
+  },
+  {
+   "fieldname": "ra_10gm_html",
+   "fieldtype": "HTML",
+   "label": "RA 10gm HTML"
+  },
+  {
+   "fieldname": "aniline_html",
+   "fieldtype": "HTML",
+   "label": "Aniline HTML"
+  },
+  {
+   "fieldname": "carbon_html",
+   "fieldtype": "HTML",
+   "label": "Carbon HTML"
+  },
+  {
+   "fieldname": "distillation_html",
+   "fieldtype": "HTML",
+   "label": "Distillation HTML"
+  },
+  {
+   "fieldname": "dewatering_html",
+   "fieldtype": "HTML",
+   "label": "Dewatering HTML"
+  },
+  {
+   "fieldname": "dewatering3_html",
+   "fieldtype": "HTML",
+   "label": "Dewatering3 HTML"
+  },
+  {
+   "fieldname": "solubility_html",
+   "fieldtype": "HTML",
+   "label": "Solubility HTML"
+  },
+  {
+   "fieldname": "suspended_matter_html",
+   "fieldtype": "HTML",
+   "label": "Suspended Matter HTML"
+  },
+  {
+   "fieldname": "freezing_point_html",
+   "fieldtype": "HTML",
+   "label": "Freezing Point HTML"
+  },
+  {
+   "fieldname": "freezing50_html",
+   "fieldtype": "HTML",
+   "label": "Freezing50 HTML"
+  },
+  {
+   "fieldname": "freezing33_html",
+   "fieldtype": "HTML",
+   "label": "Freezing33 HTML"
+  },
+  {
+   "fieldname": "elemental_analysis_in_percentage_mass_astm_d5185_section",
+   "fieldtype": "Section Break",
+   "label": "Elemental Analysis in percentage mass (ASTM D5185)"
+  },
+  {
+   "default": "Elemental Other Table",
+   "fieldname": "other_elemental",
+   "fieldtype": "Link",
+   "label": "Other Elemental",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "elemental_astm_d5185",
+   "fieldtype": "Table",
+   "label": "Elemental (ASTM D5185)",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "elemental_astm_d5185_html",
+   "fieldtype": "HTML",
+   "label": "Elemental (ASTM D5185) HTML"
+  },
+  {
+   "fieldname": "viscosity_blend_astm_d445_section",
+   "fieldtype": "Section Break",
+   "label": "Viscosity Blend (ASTM D445)"
+  },
+  {
+   "default": "Viscosity Blend 100 Table",
+   "fieldname": "blend_template",
+   "fieldtype": "Link",
+   "label": "Blend Template",
+   "options": "Child Table Template"
+  },
+  {
+   "fieldname": "viscosity_blend",
+   "fieldtype": "Table",
+   "label": "Viscosity Blend",
+   "options": "Raw Data Sample Table"
+  },
+  {
+   "fieldname": "blend_html",
+   "fieldtype": "HTML",
+   "label": "Blend HTML"
+  },
+  {
+   "fieldname": "column_break_hmce",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ash_astm_d482",
+   "fieldtype": "Data",
+   "label": "Ash (ASTM D482)",
+   "length": 15
+  },
+  {
+   "fieldname": "ash_html",
+   "fieldtype": "HTML",
+   "label": "Ash HTML"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-06 18:59:39.494784",
+ "modified_by": "Administrator",
+ "module": "Custom App",
+ "name": "Raw Data Sample",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
