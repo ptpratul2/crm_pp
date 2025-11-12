@@ -262,7 +262,7 @@ def get_data(filters):
 			(SELECT enabled FROM `tabUser` WHERE name = o.opportunity_owner LIMIT 1) as owner_active,
 			o.party_name as account_name,
 			o.opportunity_type,
-			o.custom_services as services,
+			o.custom_sub_vertical as services,
 			o.custom_lost_reason as lost_reason,
 			o.custom_inactive_reason as inactive_reason,
 			o.phone

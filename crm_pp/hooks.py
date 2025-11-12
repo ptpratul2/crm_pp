@@ -34,6 +34,7 @@ app_include_css = "/assets/crm_pp/css/timezone.css"
 app_include_js = [
      "assets/crm_pp/js/custom_communication.js",
      "assets/crm_pp/js/email_template_auto_attach.js",
+     "assets/crm_pp/js/char_widget.js",
 ]
 
 # include js, css files in header of web template
