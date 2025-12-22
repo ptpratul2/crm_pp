@@ -1,0 +1,326 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"LAKRmpYMRA\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XGIwEUStw_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"69RN0XsiJK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"t6PQ0vY-Iw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunity\",\"col\":3}},{\"id\":\"VOFE0hqXRD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"wdROEmB_XG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"-I9HhcgUKE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ttpROKW9vk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"-76QPdbBHy\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Pipeline\",\"col\":6}},{\"id\":\"BV_q5wVPeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":6}},{\"id\":\"Iydm7X0T78\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard List\",\"col\":6}},{\"id\":\"g6lY8f_blD\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard list 2\",\"col\":6}}]",
+ "creation": "2025-07-29 00:11:07.074335",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Dashboard List",
+   "label": "Dashboard List"
+  },
+  {
+   "custom_block_name": "Dashboard list 2",
+   "label": "Dashboard list 2"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "crm",
+ "idx": 1,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Prompt CRM",
+ "links": [
+  {
+   "dependencies": "Lead",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lead Details",
+   "link_count": 0,
+   "link_to": "Lead Details",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Pipeline Analytics",
+   "link_count": 0,
+   "link_to": "Sales Pipeline Analytics",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Opportunity Summary by Sales Stage",
+   "link_count": 0,
+   "link_to": "Opportunity Summary by Sales Stage",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Funnel",
+   "link_count": 0,
+   "link_to": "sales-funnel",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Lead",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Prospects Engaged But Not Converted",
+   "link_count": 0,
+   "link_to": "Prospects Engaged But Not Converted",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Opportunity",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "First Response Time for Opportunity",
+   "link_count": 0,
+   "link_to": "First Response Time for Opportunity",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Sales Order",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Inactive Customers",
+   "link_count": 0,
+   "link_to": "Inactive Customers",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Lead",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Campaign Efficiency",
+   "link_count": 0,
+   "link_to": "Campaign Efficiency",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Lead",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lead Owner Efficiency",
+   "link_count": 0,
+   "link_to": "Lead Owner Efficiency",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Schedule",
+   "link_count": 0,
+   "link_to": "Maintenance Schedule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Visit",
+   "link_count": 0,
+   "link_to": "Maintenance Visit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Warranty Claim",
+   "link_count": 0,
+   "link_to": "Warranty Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lead MQL SQL - AK",
+   "link_count": 0,
+   "link_to": "Lead MQL SQL - AK",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Lead report -Priyanka",
+   "link_count": 0,
+   "link_to": "Lead report -Priyanka",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Daily Leads Report-Shreya",
+   "link_count": 0,
+   "link_to": "Daily Leads Report-Shreya",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Opportunities Closed Won This Q by Type",
+   "link_count": 0,
+   "link_to": "Opportunities Closed Won This Q by Type",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Pipeline",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lead",
+   "link_count": 0,
+   "link_to": "Lead",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Opportunity",
+   "link_count": 0,
+   "link_to": "Opportunity",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contact",
+   "link_count": 0,
+   "link_to": "Contact",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Revenue Tracker",
+   "link_count": 0,
+   "link_to": "Revenue Tracker",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Forecast",
+   "link_count": 0,
+   "link_to": "Sales Forecast",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-12-22 11:46:20.802038",
+ "modified_by": "Administrator",
+ "module": "CRM PP",
+ "name": "Prompt CRM",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "sequence_id": 19.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "format": "{}",
+   "label": "Opportunity",
+   "link_to": "Opportunity",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "format": "{}",
+   "label": "Lead",
+   "link_to": "Lead",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Customer",
+   "link_to": "Customer",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Dashboard",
+   "link_to": "CRM Dashboard",
+   "type": "Dashboard"
+  }
+ ],
+ "title": "Prompt CRM"
+}

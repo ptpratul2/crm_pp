@@ -37,6 +37,12 @@ app_include_js = [
      "assets/crm_pp/js/char_widget.js",
 ]
 
+
+
+desk_include_js = [
+    "assets/crm_pp/js/char_widget.js"
+]
+
 # include js, css files in header of web template
 # web_include_css = "/assets/crm_pp/css/crm_pp.css"
 # web_include_js = "/assets/crm_pp/js/crm_pp.js"
