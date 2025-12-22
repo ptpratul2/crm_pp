@@ -26,7 +26,6 @@ def custom_post_retrieve_cleanup(self, uid, msg_num):
         if not cint(self.settings.use_imap):
             self.pop.dele(msg_num)
         else:
-            # ❌ DO NOT mark email as SEEN automatically
             # This prevents Gmail/Outlook inbox mails from being marked as READ
             pass
 
