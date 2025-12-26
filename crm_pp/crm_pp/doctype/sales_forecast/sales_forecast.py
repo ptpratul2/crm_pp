@@ -1,132 +1,57 @@
-# # Copyright (c) 2025, Octavision Software Solutions and contributors
-# # For license information, please see license.txt
-# import frappe
-# from frappe.model.document import Document
-# from frappe.utils import flt
-# from datetime import datetime
-
-# class SalesForecast(Document):
-#     pass
-# 	def before_save(self):
-# 		self.calc_target_for_range()
-# 		self.pull_actuals_and_outstanding()
-# 		self.calc_variance()
-# 		self.calc_total_forecast_value()
-
-# 	def calc_target_for_range(self):
-# 		annual = flt(self.annual_target)
-# 		if annual and self.start_date and self.end_date:
-# 			d1 = datetime.strptime(self.start_date, "%Y-%m-%d")
-# 			d2 = datetime.strptime(self.end_date, "%Y-%m-%d")
-# 			months = (d2.year - d1.year) * 12 + (d2.month - d1.month) + 1
-# 			self.target_for_selected_range = (annual / 12.0) * months
-# 		else:
-# 			self.target_for_selected_range = 0.0
-
-# 	def pull_actuals_and_outstanding(self):
-# 		conditions = []
-# 		values = []
-# 		if self.salesperson:
-# 			conditions.append("salesperson = %s"); values.append(self.salesperson)
-# 		if self.vertical__business_unit:
-# 			conditions.append("vertical__business_unit = %s"); values.append(self.vertical__business_unit)
-# 		if self.start_date and self.end_date:
-# 			conditions.append("invoice_date BETWEEN %s AND %s"); values.extend([self.start_date, self.end_date])
-
-# 		where_clause = (" WHERE " + " AND ".join(conditions)) if conditions else ""
-# 		query = f"""
-# 			SELECT
-# 				COALESCE(SUM(payment_received),0) AS total_received,
-# 				COALESCE(SUM(invoice_amount) - SUM(payment_received),0) AS total_outstanding
-# 			FROM `tabRevenue Tracker`
-# 			{where_clause}
-# 		"""
-# 		res = frappe.db.sql(query, values, as_dict=True)
-# 		if res:
-# 			row = res[0]
-# 			self.actual_revenue = flt(row.get('total_received', 0.0))
-# 			self.outstanding = flt(row.get('total_outstanding', 0.0))
-# 		else:
-# 			self.actual_revenue = 0.0
-# 			self.outstanding = 0.0
-
-# 	def calc_variance(self):
-# 		self.forecast_variance = flt(self.forecast_amount) - flt(self.actual_revenue)
-# 		if flt(self.forecast_amount):
-# 			self.variance_percent = (self.forecast_variance / flt(self.forecast_amount)) * 100.0
-# 		else:
-# 			self.variance_percent = 0.0
-
-# 	def calc_total_forecast_value(self):
-# 		total = 0.0
-# 		for row in (self.opportunities_nearing_closure or []):
-# 			total += flt(row.value)
-# 		self.total_forecast_value = total
-
-
-
-
-# Copyright (c) 2025, Octavision Software Solutions and contributors
-# For license information, please see license.txt
 import frappe
 from frappe.model.document import Document
-from frappe.utils import flt, get_datetime
+from frappe.utils import today
 
 class SalesForecast(Document):
 
-	def before_save(self):
-		self.calc_target_for_range()
-		self.pull_actuals_and_outstanding()
-		self.calc_variance()
-		self.calc_total_forecast_value()
+    def validate(self):
+        # self.validate_unique_forecast()
+        self.calculate_monthly_target()
+        self.validate_edit_rules()
 
-	def calc_target_for_range(self):
-		annual = flt(self.annual_target)
-		if annual and self.start_date and self.end_date:
-			# ✅ get_datetime() safely handles both str and date objects
-			d1 = get_datetime(self.start_date)
-			d2 = get_datetime(self.end_date)
-			months = (d2.year - d1.year) * 12 + (d2.month - d1.month) + 1
-			self.target_for_selected_range = (annual / 12.0) * months
-		else:
-			self.target_for_selected_range = 0.0
+    def before_submit(self):
+        self.set_snapshot_date()
 
-	def pull_actuals_and_outstanding(self):
-		conditions = []
-		values = []
-		if self.salesperson:
-			conditions.append("salesperson = %s"); values.append(self.salesperson)
-		if self.vertical__business_unit:
-			conditions.append("vertical__business_unit = %s"); values.append(self.vertical__business_unit)
-		if self.start_date and self.end_date:
-			conditions.append("invoice_date BETWEEN %s AND %s"); values.extend([self.start_date, self.end_date])
+    # def validate_unique_forecast(self):
+    #     """Avoid duplicate forecast per BD + Vertical + FY + Month"""
+    #     exists = frappe.db.exists(
+    #         "Sales Forecast",
+    #         {
+    #             "salesperson": self.salesperson,
+    #             "vertical__business_unit": self.vertical__business_unit,
+    #             "time_period": self.time_period,
+    #             "forecast_revenue_next_month": self.forecast_revenue_next_month,
+    #             "name": ("!=", self.name)
+    #         }
+    #     )
+    #     if exists:
+    #         frappe.throw(
+    #             "Sales Forecast already exists for this BD, Vertical, Fiscal Year and Month."
+    #         )
 
-		where_clause = (" WHERE " + " AND ".join(conditions)) if conditions else ""
-		query = f"""
-			SELECT
-				COALESCE(SUM(payment_received),0) AS total_received,
-				COALESCE(SUM(invoice_amount) - SUM(payment_received),0) AS total_outstanding
-			FROM `tabRevenue Tracker`
-			{where_clause}
-		"""
-		res = frappe.db.sql(query, values, as_dict=True)
-		if res:
-			row = res[0]
-			self.actual_revenue = flt(row.get('total_received', 0.0))
-			self.outstanding = flt(row.get('total_outstanding', 0.0))
-		else:
-			self.actual_revenue = 0.0
-			self.outstanding = 0.0
+    def calculate_monthly_target(self):
+        """Annual ÷ 12"""
+        if self.annual_target_revenue:
+            self.monthly_targetderived = self.annual_target_revenue / 12
 
-	def calc_variance(self):
-		self.forecast_variance = flt(self.forecast_amount) - flt(self.actual_revenue)
-		if flt(self.forecast_amount):
-			self.variance_percent = (self.forecast_variance / flt(self.forecast_amount)) * 100.0
-		else:
-			self.variance_percent = 0.0
+    def set_snapshot_date(self):
+        """Freeze belief date"""
+        if not self.snapshot_date:
+            self.snapshot_date = today()
 
-	def calc_total_forecast_value(self):
-		total = 0.0
-		for row in (self.opportunities_nearing_closure or []):
-			total += flt(row.value)
-		self.total_forecast_value = total
+    def validate_edit_rules(self):
+        """Prevent editing past snapshots & annual targets"""
+        if not self.is_new():
+            old_doc = frappe.get_doc(self.doctype, self.name)
+
+            # Snapshot locked → no edits allowed
+            if old_doc.snapshot_date:
+                blocked_fields = [
+                    "forecast_revenue",
+                    "annual_target_revenue"
+                ]
+                for field in blocked_fields:
+                    if old_doc.get(field) != self.get(field):
+                        frappe.throw(
+                            "Past forecasts / annual targets cannot be edited after snapshot."
+                        )
