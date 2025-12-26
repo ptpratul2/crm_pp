@@ -8,51 +8,37 @@
  "field_order": [
   "sales_forecast_details_section",
   "salesperson",
-  "end_date",
-  "actual_revenue",
-  "remarks__notes",
   "column_break_yzfj",
   "vertical__business_unit",
-  "annual_target",
-  "outstanding",
   "column_break_caue",
   "time_period",
-  "target_for_selected_range",
-  "forecast_variance",
   "column_break_jxuc",
-  "start_date",
-  "forecast_amount",
-  "variance_",
-  "opportunities_nearing_closure_section",
-  "opportunities_nearing_closure"
+  "annual_target_revenue",
+  "column_break_agac",
+  "monthly_targetderived",
+  "snapshotting_section",
+  "snapshot_date",
+  "column_break_vrsm",
+  "forecast_revenue_next_month",
+  "column_break_pvat",
+  "forecast_amount"
  ],
  "fields": [
   {
    "fieldname": "sales_forecast_details_section",
    "fieldtype": "Section Break",
-   "label": "Sales Forecast Details"
+   "label": "Ownership & Time Scope"
   },
   {
    "fieldname": "salesperson",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
-   "label": "Salesperson",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "label": "End Date"
-  },
-  {
-   "fieldname": "actual_revenue",
-   "fieldtype": "Float",
-   "label": "Actual Revenue"
-  },
-  {
-   "fieldname": "remarks__notes",
-   "fieldtype": "Small Text",
-   "label": "Remarks / Notes"
+   "in_standard_filter": 1,
+   "label": "Business Development",
+   "options": "User",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_yzfj",
@@ -61,21 +47,13 @@
   {
    "fieldname": "vertical__business_unit",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
-   "label": "Vertical / Business Unit",
-   "options": "Vertical"
-  },
-  {
-   "fieldname": "annual_target",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Annual Target"
-  },
-  {
-   "fieldname": "outstanding",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Outstanding"
+   "in_standard_filter": 1,
+   "label": "Vertical",
+   "options": "Vertical",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_caue",
@@ -83,63 +61,73 @@
   },
   {
    "fieldname": "time_period",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Time Period",
-   "options": "\nMonth\nQuarter\nHalf-Year\nYear"
-  },
-  {
-   "fieldname": "target_for_selected_range",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Target for Selected Range"
-  },
-  {
-   "fieldname": "forecast_variance",
-   "fieldtype": "Float",
-   "label": "Forecast Variance"
+   "label": "Fiscal Year",
+   "options": "Fiscal Year",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_jxuc",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "start_date",
+   "fieldname": "forecast_amount",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Start Date"
+   "label": "Forecast Month",
+   "reqd": 1
   },
   {
-   "fieldname": "forecast_amount",
+   "fieldname": "annual_target_revenue",
    "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Forecast Amount"
+   "label": "Annual Target Revenue",
+   "reqd": 1
   },
   {
-   "fieldname": "variance_",
-   "fieldtype": "Float",
-   "label": "Variance %"
+   "fieldname": "monthly_targetderived",
+   "fieldtype": "Currency",
+   "label": "Monthly Target(Derived)",
+   "read_only": 1
   },
   {
-   "fieldname": "opportunities_nearing_closure_section",
+   "fieldname": "forecast_revenue_next_month",
+   "fieldtype": "Currency",
+   "label": "Forecast Revenue (Next Month)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "snapshotting_section",
    "fieldtype": "Section Break",
-   "label": "Opportunities Nearing Closure"
+   "label": "Snapshotting "
   },
   {
-   "fieldname": "opportunities_nearing_closure",
-   "fieldtype": "Table",
-   "label": "Opportunities Nearing Closure",
-   "options": "Nearing Closure"
+   "fieldname": "snapshot_date",
+   "fieldtype": "Date",
+   "label": "Snapshot Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_agac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vrsm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pvat",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-29 10:57:29.396117",
+ "modified": "2025-12-26 15:13:40.245522",
  "modified_by": "Administrator",
  "module": "CRM PP",
  "name": "Sales Forecast",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
