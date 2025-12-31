@@ -209,7 +209,11 @@ doc_events = {
         "validate": [
             "crm_pp.crm_pp.opportunity_handler.set_customer_id"
         ]
+    },
+    "Customer":{
+        "after_insert": "crm_pp.crm_pp.create_customer_from_lead.add_customer_link_in_contact_wrapper"
     }
+    
 }
 
 # Scheduled Tasks
