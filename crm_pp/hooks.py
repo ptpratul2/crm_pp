@@ -27,13 +27,17 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/crm_pp/css/crm_pp.css"
 
-app_include_css = "/assets/crm_pp/css/timezone.css"
+app_include_css = ["/assets/crm_pp/css/timezone.css",
+                   "/assets/crm_pp/css/theme.css"
+                   ]
 # app_include_js = "/assets/crm_pp/js/crm_pp.js"
 
 
 app_include_js = [
      "assets/crm_pp/js/custom_communication.js",
      "assets/crm_pp/js/email_template_auto_attach.js",
+     "assets/crm_pp/js/custom_lead_sidebar.js"
+
 ]
 
 # include js, css files in header of web template
@@ -70,7 +74,7 @@ doctype_js = {
     ]
 }
 
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+# doctype_list_js = {"opportunity" : "public/js/custom_opportunity.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
