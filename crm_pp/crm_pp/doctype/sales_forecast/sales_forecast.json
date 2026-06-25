@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{salesperson}",
+ "autoname": "format:{salesperson}-{custom_vertical}-{time_period}",
  "creation": "2025-10-28 13:42:10.874005",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,19 +9,17 @@
   "sales_forecast_details_section",
   "salesperson",
   "column_break_yzfj",
-  "vertical__business_unit",
+  "custom_vertical",
   "column_break_caue",
   "time_period",
   "column_break_jxuc",
   "annual_target_revenue",
   "column_break_agac",
   "monthly_targetderived",
+  "goal_status",
   "snapshotting_section",
-  "snapshot_date",
-  "column_break_vrsm",
-  "forecast_revenue_next_month",
-  "column_break_pvat",
-  "forecast_amount"
+  "monthly_sales_forecast",
+  "amended_from"
  ],
  "fields": [
   {
@@ -45,17 +43,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "vertical__business_unit",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Vertical",
-   "options": "Vertical",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_caue",
    "fieldtype": "Column Break"
   },
@@ -72,13 +59,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "forecast_amount",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Forecast Month",
-   "reqd": 1
-  },
-  {
    "fieldname": "annual_target_revenue",
    "fieldtype": "Currency",
    "label": "Annual Target Revenue",
@@ -91,43 +71,57 @@
    "read_only": 1
   },
   {
-   "fieldname": "forecast_revenue_next_month",
-   "fieldtype": "Currency",
-   "label": "Forecast Revenue (Next Month)",
-   "reqd": 1
-  },
-  {
    "fieldname": "snapshotting_section",
    "fieldtype": "Section Break",
-   "label": "Snapshotting "
-  },
-  {
-   "fieldname": "snapshot_date",
-   "fieldtype": "Date",
-   "label": "Snapshot Date",
-   "reqd": 1
+   "label": "Snapshotting"
   },
   {
    "fieldname": "column_break_agac",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_vrsm",
-   "fieldtype": "Column Break"
+   "fieldname": "custom_vertical",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Vertical",
+   "options": "Vertical",
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_pvat",
-   "fieldtype": "Column Break"
+   "fieldname": "goal_status",
+   "fieldtype": "Select",
+   "label": "Goal Status",
+   "options": "Active\nLocked"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sales Forecast",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "monthly_sales_forecast",
+   "fieldtype": "Table",
+   "label": "Monthly Sales Forecast",
+   "options": "Monthly Sales Forecast"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-12-26 15:13:40.245522",
+ "modified": "2026-02-07 13:40:54.415740",
  "modified_by": "Administrator",
  "module": "CRM PP",
  "name": "Sales Forecast",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

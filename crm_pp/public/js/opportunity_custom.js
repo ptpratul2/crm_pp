@@ -184,7 +184,7 @@ frappe.ui.form.on("Opportunity", {
                 }
                 
                 .funnel-segment.completed {
-                    background: #10b981;
+                    background: #60b746;
                     color: white;
                     box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
                 }
@@ -217,9 +217,10 @@ frappe.ui.form.on("Opportunity", {
                 }
 
                 .mark-complete-btn {
-                    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                    background: linear-gradient(135deg, #214695, #214695);
                     color: white;
                     text-align: center;
+                    width: 250px;
                     padding: 15px;
                     border-radius: 8px;
                     font-weight: 600;
@@ -231,7 +232,7 @@ frappe.ui.form.on("Opportunity", {
                 }
                 
                 .mark-complete-btn:hover {
-                    background: linear-gradient(135deg, #2563eb, #1e40af);
+                    background: linear-gradient(135deg, #214695, #214695);
                     transform: translateY(-1px);
                     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
                 }

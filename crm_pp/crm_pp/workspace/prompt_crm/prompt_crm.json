@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"LAKRmpYMRA\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XGIwEUStw_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"69RN0XsiJK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"t6PQ0vY-Iw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunity\",\"col\":3}},{\"id\":\"VOFE0hqXRD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"wdROEmB_XG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"-I9HhcgUKE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ttpROKW9vk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"-76QPdbBHy\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Pipeline\",\"col\":6}},{\"id\":\"BV_q5wVPeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":6}},{\"id\":\"Iydm7X0T78\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard List\",\"col\":6}},{\"id\":\"g6lY8f_blD\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard list 2\",\"col\":6}}]",
+ "content": "[{\"id\":\"LAKRmpYMRA\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XGIwEUStw_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"69RN0XsiJK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"t6PQ0vY-Iw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunity\",\"col\":3}},{\"id\":\"VOFE0hqXRD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"wdROEmB_XG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"-I9HhcgUKE\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"mX5hgYVmRd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Insights\",\"col\":3}},{\"id\":\"ttpROKW9vk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"-76QPdbBHy\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Pipeline\",\"col\":6}},{\"id\":\"BV_q5wVPeD\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":6}},{\"id\":\"Iydm7X0T78\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard List\",\"col\":6}},{\"id\":\"g6lY8f_blD\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Dashboard list 2\",\"col\":6}}]",
  "creation": "2025-07-29 00:11:07.074335",
  "custom_blocks": [
   {
@@ -274,7 +274,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-12-22 11:46:20.802038",
+ "modified": "2026-02-01 16:38:52.318204",
  "modified_by": "Administrator",
  "module": "CRM PP",
  "name": "Prompt CRM",
@@ -299,6 +299,13 @@
    "link_to": "Opportunity",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Insights",
+   "type": "URL",
+   "url": "/insights"
   },
   {
    "color": "Blue",
